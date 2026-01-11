@@ -13,15 +13,16 @@ https://github.com/user-attachments/assets/7a10110e-a374-44f7-a0b4-386a25cb08b0
 - **Mobile Detection** - Automatically enables on mobile devices
 - **Portrait/Landscape Support** - Adapts UI to device orientation
 - **Safari Compatibility** - Fixes for iOS Safari quirks
-- **Performance adjustments** - To improve frame rate and overheating on devices
+- **Performance adjustments** - Tweaks to improve frame rate and overheating on devices
+- **Character carousel** - see all characters you have ownership to in the swipable carousel
 
 ### Premium Features
 Premium features require a [Patreon](https://www.patreon.com/carolingiandev) subscription on Amethyst tier:
 
-- **Mobile Character Sheets** - Bottom drawer UI with swipeable avatar carousel
+- **Mobile Character Sheets** - Drawer UI with all tabs - Inventory, Features, Spells, and a Combat section.
 - **Combat Section** - Quick access to attacks, saves, and ability checks
-- **Inventory Management** - Touch-optimized item lists with quantity controls
-- **Spellbook** - Spell slots, preparation, and casting interface
+- **Inventory and Spells** - Touch-friendly lists with activation and preparation buttons
+- **Canvas Freeze** - Enable on low-end devices to help conserve battery and improve performance - canvas remains frozen when unused
 - **Image Optimizer** - Compress scene backgrounds and tokens for faster loading
 - **Chat Drawer** - Slide-out chat panel optimized for mobile
 - **Template Placer** - Touch-friendly spell template positioning
