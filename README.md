@@ -2,6 +2,8 @@
 
 A mobile-friendly interface for [Foundry VTT](https://foundryvtt.com/) with touch controls, optimized character sheets, and performance enhancements for phones and tablets.
 
+<iframe width="380" height="720" src="https://www.youtube.com/embed/CzozohoF2og?si=eoE1ZgC4T7MlFh-2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Features
 
 ### Free Features
