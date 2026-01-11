@@ -2,7 +2,8 @@
 
 A mobile-friendly interface for [Foundry VTT](https://foundryvtt.com/) with touch controls, optimized character sheets, and performance enhancements for phones and tablets.
 
-<iframe width="380" height="720" src="https://www.youtube.com/embed/CzozohoF2og?si=eoE1ZgC4T7MlFh-2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+https://github.com/user-attachments/assets/7a10110e-a374-44f7-a0b4-386a25cb08b0
+
 
 ## Features
 
@@ -15,7 +16,7 @@ A mobile-friendly interface for [Foundry VTT](https://foundryvtt.com/) with touc
 - **Performance adjustments** - To improve frame rate and overheating on devices
 
 ### Premium Features
-Premium features require a [Patreon](https://www.patreon.com/carolingiandev) subscription:
+Premium features require a [Patreon](https://www.patreon.com/carolingiandev) subscription on Amethyst tier:
 
 - **Mobile Character Sheets** - Bottom drawer UI with swipeable avatar carousel
 - **Combat Section** - Quick access to attacks, saves, and ability checks
