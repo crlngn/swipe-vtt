@@ -12,7 +12,7 @@ A mobile-friendly interface for [Foundry VTT](https://foundryvtt.com/) with touc
 - **Safari Compatibility** - Fixes for iOS Safari quirks
 
 ### Premium Features
-Premium features require a [Patreon](https://www.patreon.com/carolingian) subscription:
+Premium features require a [Patreon](https://www.patreon.com/carolingiandev) subscription:
 
 - **Mobile Character Sheets** - Bottom drawer UI with swipeable avatar carousel
 - **Combat Section** - Quick access to attacks, saves, and ability checks
@@ -57,16 +57,16 @@ The module automatically activates on mobile devices. On desktop, you can enable
 
 ## Premium Activation
 
-1. Subscribe on [Patreon](https://www.patreon.com/carolingian)
+1. Subscribe on [Patreon](https://www.patreon.com/carolingiandev)
 2. In Foundry, open Swipe VTT settings
 3. Click "Connect Patreon"
 4. Authorize the connection
 5. Premium features unlock automatically
 
 ## Support
-
+- [Discord](https://discord.gg/kjmJzgUJ)
+- [Patreon Community](https://www.patreon.com/carolingiandev)
 - [Report Issues](https://github.com/crlngn/swipe-vtt/issues)
-- [Patreon Community](https://www.patreon.com/carolingian)
 
 ## License
 
