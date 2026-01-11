@@ -1,2 +1,2 @@
 # swipe-vtt-premium-bundles
-Versioned bundled code for Swipe VTT premium features
+Code for Swipe VTT with premium features
