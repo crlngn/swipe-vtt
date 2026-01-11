@@ -1,0 +1,111 @@
+name: Release to FoundryVTT
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Extract Repository Name and Version
+        run: |
+          REPO_NAME=$(basename $GITHUB_REPOSITORY)
+          VERSION="${GITHUB_REF#refs/tags/v}"
+          echo "REPO_NAME=$REPO_NAME" >> $GITHUB_ENV
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Get Compatibility Versions
+        id: get_compatibility
+        run: |
+          # Download module.json from the release assets
+          ASSET_URL=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/releases/tags/v$VERSION" \
+            | jq -r '.assets[] | select(.name == "module.json") | .browser_download_url')
+
+          if [ -n "$ASSET_URL" ] && [ "$ASSET_URL" != "null" ]; then
+            curl -sL "$ASSET_URL" -o module.json
+            MIN_VERSION=$(jq -r '.compatibility.minimum // "13"' module.json)
+            VERIFIED_VERSION=$(jq -r '.compatibility.verified // "13"' module.json)
+            MAX_VERSION=$(jq -r '.compatibility.maximum // ""' module.json)
+          else
+            # Fallback values if module.json not in release
+            MIN_VERSION="13"
+            VERIFIED_VERSION="13"
+            MAX_VERSION=""
+          fi
+
+          echo "MIN_VERSION=$MIN_VERSION" >> $GITHUB_ENV
+          echo "VERIFIED_VERSION=$VERIFIED_VERSION" >> $GITHUB_ENV
+          echo "MAX_VERSION=$MAX_VERSION" >> $GITHUB_ENV
+
+      - name: Publish to FoundryVTT
+        env:
+          FOUNDRY_PACKAGE_API_KEY: ${{ secrets.FOUNDRY_PACKAGE_API_KEY }}
+        run: |
+          echo "Publishing version $VERSION to FoundryVTT..."
+
+          # Build compatibility JSON (exclude maximum if empty)
+          if [ -n "$MAX_VERSION" ]; then
+            COMPAT_JSON='"compatibility": {"minimum": "'"$MIN_VERSION"'", "verified": "'"$VERIFIED_VERSION"'", "maximum": "'"$MAX_VERSION"'"}'
+          else
+            COMPAT_JSON='"compatibility": {"minimum": "'"$MIN_VERSION"'", "verified": "'"$VERIFIED_VERSION"'"}'
+          fi
+
+          API_RESPONSE=$(curl -s -X POST "https://foundryvtt.com/_api/packages/release_version/" \
+            -H "Content-Type: application/json" \
+            -H "Authorization: $FOUNDRY_PACKAGE_API_KEY" \
+            -d '{
+              "id": "'"$REPO_NAME"'",
+              "release": {
+                "version": "'"$VERSION"'",
+                "manifest": "https://github.com/${{ github.repository }}/releases/latest/download/module.json",
+                "notes": "https://github.com/${{ github.repository }}/releases/tag/v'"$VERSION"'",
+                '"$COMPAT_JSON"'
+              }
+            }')
+          echo "API Response: $API_RESPONSE"
+
+  notify_discord:
+    runs-on: ubuntu-latest
+    needs: release
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Get Release Info
+        id: get_release
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const release = await github.rest.repos.getRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: context.payload.release.id
+            });
+            const releaseData = {
+              body: release.data.body || "No release notes provided"
+            };
+            return JSON.stringify(releaseData);
+          result-encoding: string
+
+      - name: Send Discord Notification
+        uses: Ilshidur/action-discord@master
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        with:
+          args: |
+            **New Release for Swipe VTT**
+
+            **Version:** ${{ github.ref_name }}
+
+            ${{ fromJson(steps.get_release.outputs.result).body }}
+
+            **Release:** https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}
+            **Manifest URL:** https://github.com/${{ github.repository }}/releases/download/${{ github.ref_name }}/module.json
