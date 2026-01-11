@@ -10,6 +10,7 @@ A mobile-friendly interface for [Foundry VTT](https://foundryvtt.com/) with touc
 - **Mobile Detection** - Automatically enables on mobile devices
 - **Portrait/Landscape Support** - Adapts UI to device orientation
 - **Safari Compatibility** - Fixes for iOS Safari quirks
+- **Performance adjustments** - To improve frame rate and overheating on devices
 
 ### Premium Features
 Premium features require a [Patreon](https://www.patreon.com/carolingiandev) subscription:
