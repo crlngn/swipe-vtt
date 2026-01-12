@@ -54,8 +54,9 @@ The module automatically activates on mobile devices. On desktop, you can enable
 ### Touch Gestures
 | Gesture | Action |
 |---------|--------|
-| Single tap | Select token |
+| Single tap | Select token <-> Target token |
 | Double tap | Open character sheet |
+| Drag | Move token |
 | Long press | Show token HUD |
 | Two-finger pan | Move canvas |
 | Pinch | Zoom in/out |
