@@ -1,6 +1,6 @@
 # Swipe VTT
 
-A mobile-friendly interface for [Foundry VTT](https://foundryvtt.com/) with touch controls, optimized character sheets, and performance enhancements for phones and tablets.
+A mobile-friendly interface for [Foundry VTT](https://foundryvtt.com/) with touch controls, optimized character sheets, and performance enhancements for phones and tablets. Use it as a second screen companion for easy access to character sheet, roll saves, skills, attacks, update of HP, etc. - but if your PC fails you can play from the phone!
 
 If you are a Patreon supporter, as a GM all of your players will get access to premium features. The GM account needs to be logged in and connected to Patreon for them to be able to access.
 
@@ -9,31 +9,44 @@ https://github.com/user-attachments/assets/7a10110e-a374-44f7-a0b4-386a25cb08b0
 
 ## Features
 
-### Free Features
-- **Touch Controls** - Pan and pinch-zoom navigation on the canvas
-- **Token Interaction** - Tap to select, double-tap to open sheets, long-press for HUD
-- **Mobile Detection** - Automatically enables on mobile devices
-- **Portrait/Landscape Support** - Adapts UI to device orientation
-- **Safari Compatibility** - Fixes for iOS Safari quirks
+### AVAILABLE FOR FREE
+
+- **Map Touch Controls** - Pan and pinch-zoom navigation on the canvas
+- **Token Interaction** - Tap to select, tap again to target, double-tap to open sheets, drag to move, long-press for HUD
+- **Quick controls** - quick access to most necessary controls: ruler, remove targets, template drawing, volume and logout
+- **Touch/Mobile Detection** - Automatically enables on mobile devices
+- **Portrait/Landscape Support** - Adapts UI to device orientation - on tablets, sheets load as a side drawer
+- **Safari Compatibility** - Fixes for iOS Safari quirks (But JB2A videos don't have transparency on iOS, can't work around)
 - **Performance adjustments** - Tweaks to improve frame rate and overheating on devices
+- **Application window resize** - resizes or rescales handouts, journals and other application windows to fit in view
 - **Character carousel** - see all characters you have ownership to in the swipable carousel
+- **Basic sheet** - tab for saves, checks and skill rolls as well as hp management is free.
 
-### Premium Features
-Premium features require a [Patreon](https://www.patreon.com/carolingiandev) subscription on Amethyst tier:
+### FOR PATREON SUPPORTERS (Amethyst tier)
 
-- **Mobile Character Sheets** - Drawer UI with all tabs - Inventory, Features, Spells, and a Combat section.
+Premium features require a [Patreon](https://www.patreon.com/carolingiandev) subscription on Amethyst tier
+
+- **Full Mobile Character Sheets** - Drawer UI with all tabs - Inventory, Features, Spells, and a Combat section (currently for DnD5e)
 - **Combat Section** - Quick access to attacks, saves, and ability checks
-- **Inventory and Spells** - Touch-friendly lists with activation and preparation buttons
+- **Inventory and Spellbook** - Touch-friendly lists with activation and preparation buttons
 - **Canvas Freeze** - Enable on low-end devices to help conserve battery and improve performance - canvas remains frozen when unused
 - **Image Optimizer** - Compress scene backgrounds and tokens for faster loading
 - **Chat Drawer** - Slide-out chat panel optimized for mobile
-- **Template Placer** - Touch-friendly spell template positioning
+- **Spell Template Placer** - Touch-friendly spell template positioning - combine with free module **Flash Token Bar** for auto-targeting
+
+The module hs been tested and works well with **Midi-QoL**, **Flash Token Bar 5e** and **Carolingian UI**
+
+### Limitations
+
+- JB2a videos don't work on iPad / iPhone
+- Sheet editing is for combat-related things - not character management
+- Not extensively tested on old phones
 
 ## Requirements
 
 - Foundry VTT v13+
-- D&D 5e System 4.0+
 - [socketlib](https://foundryvtt.com/packages/socketlib) module
+- For sheets: D&D 5e System 4.0+
 
 ## Installation
 
@@ -52,6 +65,8 @@ https://github.com/crlngn/swipe-vtt/releases/latest/download/module.json
 ## Usage
 
 The module automatically activates on mobile devices. On desktop, you can enable it manually in module settings.
+The GM needs to go to settings >> "Manage Premium Features" >> Connect to Patreon
+The GM must be online and connected for players to use the rolling feature
 
 ### Touch Gestures
 | Gesture | Action |
