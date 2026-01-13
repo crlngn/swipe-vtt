@@ -2,6 +2,8 @@
 
 A mobile-friendly interface for [Foundry VTT](https://foundryvtt.com/) with touch controls, optimized character sheets, and performance enhancements for phones and tablets.
 
+If you are a Patreon, as a GM all of your players will get access to premium features. The GM account needs to be logged in and connected to Patreon for them to be able to access.
+
 https://github.com/user-attachments/assets/7a10110e-a374-44f7-a0b4-386a25cb08b0
 
 
