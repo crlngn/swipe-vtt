@@ -2,7 +2,7 @@
 
 A mobile-friendly interface for [Foundry VTT](https://foundryvtt.com/) with touch controls, optimized character sheets, and performance enhancements for phones and tablets. Use it as a second screen companion for easy access to character sheet, roll saves, skills, attacks, update of HP, etc. - but if your PC fails you can play from the phone!
 
-If you are a Patreon supporter, as a GM all of your players will get access to premium features. The GM account needs to be logged in and connected to Patreon for them to be able to access.
+If you are a Patreon supporter, as a GM all of your players will get access to premium features. The GM account needs to be logged in and connected to Patreon for them to be able to access premum features.
 
 https://github.com/user-attachments/assets/7a10110e-a374-44f7-a0b4-386a25cb08b0
 
