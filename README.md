@@ -46,7 +46,7 @@ The module hs been tested and works well with **Midi-QoL**, **Flash Token Bar **
 
 - Foundry VTT v13+
 - [socketlib](https://foundryvtt.com/packages/socketlib) module
-- For sheets: D&D 5e System 4.0+
+- For sheets: D&D 5e System 4.0+ or Daggerheart
 
 ## Installation
 
