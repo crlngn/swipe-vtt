@@ -34,7 +34,7 @@ Premium features require a [Patreon](https://www.patreon.com/carolingiandev) sub
 - **Chat Drawer** - Slide-out chat panel optimized for mobile
 - **Spell Template Placer** - Touch-friendly spell template positioning - combine with free module **Flash Token Bar** for auto-targeting
 
-The module hs been tested and works well with **Midi-QoL**, **Flash Token Bar ** and **Carolingian UI**
+The module hs been tested and works well with **Midi-QoL**, **Flash Token Bar** and **Carolingian UI**
 
 ### Limitations
 
