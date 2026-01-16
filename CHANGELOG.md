@@ -2,6 +2,42 @@
 
 All notable changes to Swipe VTT will be documented in this file.
 
+## [1.0.8] - 2026-01-14
+
+### Added
+- Daggerheart adversary mobile sheet support
+  - Adversary-specific header with HP/Stress display
+  - Difficulty and Attack modifier stats
+  - Attack section using system.attack ActionField
+  - Reaction roll button
+  - Damage thresholds row (Minor/Major/Severe)
+- Dynamic tab rendering based on actor type
+  - PCs: Traits, Loadout, Inventory, Features, Effects, Bio
+  - Adversaries: Traits, Features, Effects
+
+### Fixed
+- Tab navigation updates correctly when switching between actor types
+- Adversary attacks use system.attack instead of weapon items
+- Range labels properly localized
+
+## [1.0.7] - 2026-01-13
+
+### Added
+- Modular sheet architecture with base classes
+- System router for multi-system support
+- Daggerheart system support (initial)
+
+### Changed
+- D&D 5e sections moved to dedicated directory
+- Dev mode support with production safety checks
+
+## [1.0.0] - 2025-12-01
+
+### Added
+- Foundry VTT v13 compatibility
+- Modular sheet architecture
+- Multi-system support framework
+
 ## [0.9.1] - 2025-01-10
 
 ### Changed
