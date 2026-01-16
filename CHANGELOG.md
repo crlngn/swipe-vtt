@@ -2,6 +2,15 @@
 
 All notable changes to Swipe VTT will be documented in this file.
 
+## [1.1.0] - 2026-01-16
+
+### Added
+- PIXI.Assets aliasing for optimized images on mobile
+  - Optimized images now load directly instead of swapping after original loads
+  - Prevents large images from being downloaded on mobile devices
+- Registry validation on startup (GM only)
+  - Removes stale entries for optimized files that no longer exist
+
 ## [1.0.16] - 2026-01-15
 
 ### Added
