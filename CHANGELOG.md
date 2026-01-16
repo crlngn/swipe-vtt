@@ -2,62 +2,74 @@
 
 All notable changes to Swipe VTT will be documented in this file.
 
+## [1.0.16] - 2026-01-15
+
+### Added
+- World token system for offline GM premium access
+  - Players can access premium features when GM is offline using cached world tokens
+  - World-scoped cache prevents cross-world cache leakage
+  - 7-day token validity with automatic refresh
+- Link code authentication for Patreon (alternative to popup auth)
+  - 2-minute expiry for security
+  - Previous codes invalidated when new one is generated
+- Large image notification for GMs
+  - Permanent warning when navigating to scenes with unoptimized images
+  - Directs GM to Image Optimizer in settings
+
+### Changed
+- Removed skip functionality from Image Optimizer dialog
+- Improved Premium Auth dialog to work correctly in DEV_MODE
+- Localized "Sheet & Chat" fieldset legend
+
+### Fixed
+- Duplicate notification prevention for large image warnings
+- Race condition in premium bundle loading vs canvasReady hook
+
 ## [1.0.8] - 2026-01-14
 
 ### Added
 - Daggerheart adversary mobile sheet support
   - Adversary-specific header with HP/Stress display
-  - Difficulty and Attack modifier stats
+  - Difficulty and Attack modifier stats display
   - Attack section using system.attack ActionField
   - Reaction roll button
   - Damage thresholds row (Minor/Major/Severe)
 - Dynamic tab rendering based on actor type
-  - PCs: Traits, Loadout, Inventory, Features, Effects, Bio
-  - Adversaries: Traits, Features, Effects
+  - PCs show 6 tabs: Traits, Loadout, Inventory, Features, Effects, Bio
+  - Adversaries show 3 tabs: Traits, Features, Effects
 
 ### Fixed
-- Tab navigation updates correctly when switching between actor types
-- Adversary attacks use system.attack instead of weapon items
-- Range labels properly localized
+- Tab navigation now properly updates when switching between actor types in carousel
+- Adversary attacks now correctly use system.attack instead of weapon items
+- Range labels properly localized using CONFIG.DH.GENERAL.range
 
 ## [1.0.7] - 2026-01-13
 
 ### Added
 - Modular sheet architecture with base classes
 - System router for multi-system support
+- D&D 5e sections moved to dedicated directory
 - Daggerheart system support (initial)
 
 ### Changed
-- D&D 5e sections moved to dedicated directory
+- Refactored sheet architecture for better extensibility
 - Dev mode support with production safety checks
 
-## [1.0.0] - 2025-12-01
+## [1.0.3] - Previous
 
 ### Added
-- Foundry VTT v13 compatibility
-- Modular sheet architecture
-- Multi-system support framework
+- Initial modular sheet architecture
+- Base classes for drawer and sections
 
-## [0.9.1] - 2025-01-10
-
-### Changed
-- Improved premium bundle loading reliability
-- Optimized module initialization
-
-## [0.9.0] - 2025-01-09
+## [1.0.0] - Initial Release
 
 ### Added
-- Initial public release
-- Touch controls for canvas navigation (pan, pinch-zoom)
-- Token interaction (tap, double-tap, long-press)
-- Mobile device detection with auto-enable
-- Portrait/landscape orientation support
-- Safari compatibility fixes
-- Premium feature framework with Patreon integration
-
-### Premium Features
-- Mobile character sheets with bottom drawer UI
-- Combat, Inventory, Spellbook, Features, Effects, Biography sections
-- Image optimizer for scene backgrounds and tokens
-- Mobile chat drawer
-- Touch-friendly template placer
+- Mobile-friendly interface for Foundry VTT
+- Touch controls and gesture recognition
+- Mobile-optimized character sheets
+- Pinch-zoom and pan gestures on canvas
+- Token interaction via touch (tap, double-tap, long-press)
+- Bottom drawer UI with avatar carousel
+- D&D 5e character sheet support
+- Premium features system with Patreon integration
+- Socketlib integration for GM-player bundle sharing
