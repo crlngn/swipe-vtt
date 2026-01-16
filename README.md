@@ -64,9 +64,8 @@ https://github.com/crlngn/swipe-vtt/releases/latest/download/module.json
 
 ## Usage
 
-The module automatically activates on mobile devices. On desktop, you can enable it manually in module settings.
-The GM needs to go to settings >> "Manage Premium Features" >> Connect to Patreon
-The GM must be online and connected for players to use the rolling feature
+- The module automatically activates on mobile devices
+- The GM must have connected in the last 7 days for players to use the premium features offline
 
 ### Touch Gestures
 | Gesture | Action |
@@ -81,10 +80,14 @@ The GM must be online and connected for players to use the rolling feature
 ## Premium Activation
 
 1. Subscribe on [Patreon](https://www.patreon.com/carolingiandev)
-2. In Foundry, open Swipe VTT settings
-3. Click "Connect Patreon"
+2. In Foundry, open game settings >> Swipe VTT 
+3. Connect to Patreon
+  - As GM: if you are on a desktop browser, you can connect to Patreon via Connect to Patreon button
+    A popup should appear for you to connect to Patreon and validate your membership
+  - As GM: if you login on mobile device or Foundry Desktop App, the popup above won't work. 
+    Instead, use the "Authenticate with Link Code" option to get a code and paste it on the input box
 4. Authorize the connection
-5. Premium features unlock automatically
+5. Premium features unlock automatically for GM and players
 
 ## Support
 - [Discord](https://discord.gg/kjmJzgUJ)
