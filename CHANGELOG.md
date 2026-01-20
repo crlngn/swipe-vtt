@@ -5,10 +5,10 @@ All notable changes to Swipe VTT will be documented in this file.
 ## [1.2.4] - 2026-01-19
 
 ### Added
+- More performance options
 - Performance Mode dialog with device-based recommendations
-- Weighted device tier detection (70% memory, 30% GPU)
+- Weighted device tier detection (memory + GPU)
 - Shortcut to disable canvas entirely
-- User overrides for Dice So Nice and Automated Animations
 - Reload prompt after changing performance mode
 - Container loots in dnd5e sheets
 
