@@ -15,6 +15,7 @@ All notable changes to Swipe VTT will be documented in this file.
 ### Changed
 - Canvas freeze is now free
 - Image optimization is now free
+- Image optimization now allows saving to a custom folder
 - Fixed Disable Automated Animations / Dice So Nice settings 
 - Hide "Enable Mobile Mode on Desktop" setting on mobile to avoid confusion
 - Removed duplicate files
