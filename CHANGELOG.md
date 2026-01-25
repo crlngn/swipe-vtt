@@ -2,9 +2,22 @@
 
 All notable changes to Swipe VTT will be documented in this file.
 
-## [Unreleased]
+## [1.2.7]
 
 ### Added
+- iOS Automated Animations prompt now shows after Performance Mode selection
+
+### Changed
+- Reload prompt now triggers for all performance tab setting changes
+
+### Fixed
+- Effects tab condition buttons not visually updating after toggle
+
+## [1.2.6]
+
+### Added
+- Safari iOS detection and automatic Dice So Nice optimization
+  - Auto-sets DSN to low quality mode for WebGL compatibility
 - Collapsible category headers in Combat tab (Weapons, Features, spell levels)
 - Item descriptions in Combat tab (shown when item is expanded)
 - Item properties in Combat tab (weapon properties, spell school/range/duration, etc.)
@@ -13,6 +26,7 @@ All notable changes to Swipe VTT will be documented in this file.
 - Support for Carolingian Combat Tracker (#combat-popout visibility)
 
 ### Fixed
+- Performance mode refactored: individual settings are now source of truth
 - Canvas freeze indicator not appearing (initialization timing issue)
 
 ## [1.2.5] - 2026-01-21
