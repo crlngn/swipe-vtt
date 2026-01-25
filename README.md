@@ -2,7 +2,7 @@
 
 A mobile-friendly interface for [Foundry VTT](https://foundryvtt.com/) with touch controls, optimized character sheets, and performance enhancements for phones and tablets. Use it as a second screen companion for easy access to character sheet, roll saves, skills, attacks, update of HP, etc. - but if your PC fails you can play from the phone!
 
-If you are a Patreon supporter, as a GM all of your players will get access to premium features. The GM account needs to be logged in and connected to Patreon for them to be able to access premium features.
+If you are a Patreon supporter, as a GM all of your players will get access to premium features. The GM account needs to have previously logged in and connected to Patreon for the player to access premium features.
 
 https://github.com/user-attachments/assets/7a10110e-a374-44f7-a0b4-386a25cb08b0
 
@@ -18,6 +18,8 @@ https://github.com/user-attachments/assets/7a10110e-a374-44f7-a0b4-386a25cb08b0
 - **Portrait/Landscape Support** - Adapts UI to device orientation - on tablets, sheets load as a side drawer
 - **Safari Compatibility** - Fixes for iOS Safari quirks (But JB2A videos don't have transparency on iOS, can't work around)
 - **Performance adjustments** - Tweaks to improve frame rate and overheating on devices
+- **Canvas Freeze** - Enable on low-end devices to help conserve battery and improve performance - canvas remains frozen when unused
+- **Image Optimizer** - Compress scene backgrounds and tokens for faster loading
 - **Application window resize** - resizes or rescales handouts, journals and other application windows to fit in view
 - **Character carousel** - see all characters you have ownership to in the swipable carousel
 - **Basic sheet** - tab for basic rolls as well as hp management is free (DnD5e / Daggerheart)
@@ -29,8 +31,6 @@ Premium features require a [Patreon](https://www.patreon.com/carolingiandev) sub
 - **Full Mobile Character Sheets** - Drawer UI with all tabs - Inventory, Features, Spells, and a Combat section (currently for DnD5e / Daggerheart)
 - **Combat Section** - Quick access to attacks, saves, and ability checks
 - **Inventory and Spellbook** - Touch-friendly lists with activation and preparation buttons
-- **Canvas Freeze** - Enable on low-end devices to help conserve battery and improve performance - canvas remains frozen when unused
-- **Image Optimizer** - Compress scene backgrounds and tokens for faster loading
 - **Chat Drawer** - Slide-out chat panel optimized for mobile
 - **Spell Template Placer** - Touch-friendly spell template positioning - combine with free module **Flash Token Bar** for auto-targeting
 
@@ -38,9 +38,9 @@ The module hs been tested and works well with **Midi-QoL**, **Flash Token Bar** 
 
 ### Limitations
 
-- JB2a videos don't work on iPad / iPhone - you can disable them in settings
+- JB2a videos have dark background on iPad / iPhone - you can disable them in settings
 - Sheet editing is for combat-related things - not character management
-- Not extensively tested on old phones
+- Not extensively tested on old or low-end phones - I recommend 4Gb minimum for manipulating maps, but if using sheet only mode it is less demanding
 
 ## Requirements
 
