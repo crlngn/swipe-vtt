@@ -2,6 +2,31 @@
 
 All notable changes to Swipe VTT will be documented in this file.
 
+## [Unreleased]
+
+### Added
+- Collapsible category headers in Combat tab (Weapons, Features, spell levels)
+- Item descriptions in Combat tab (shown when item is expanded)
+- Item properties in Combat tab (weapon properties, spell school/range/duration, etc.)
+- Tap uses count to edit item/spell uses (all tabs)
+- Touch-to-mouse adapter for external modules that only support mouse events
+- Support for Carolingian Combat Tracker (#combat-popout visibility)
+
+### Fixed
+- Canvas freeze indicator not appearing (initialization timing issue)
+
+## [1.2.5] - 2026-01-21
+
+### Added
+- Warning when enabling Swipe VTT on desktop
+
+### Changed
+- Performance settings can now be saved independently of performance mode
+- Image optimizer dialog clarifies that videos are not optimized
+
+### Fixed
+- Oversized image in Effects tab of D&D 5e sheet
+
 ## [1.2.4] - 2026-01-19
 
 ### Added
