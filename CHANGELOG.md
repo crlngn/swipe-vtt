@@ -2,6 +2,11 @@
 
 All notable changes to Swipe VTT will be documented in this file.
 
+## [1.2.8]
+
+### Fixed
+- Access for Assistant GM now follows the logic of player
+
 ## [1.2.7]
 
 ### Added
