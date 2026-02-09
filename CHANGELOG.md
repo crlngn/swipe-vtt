@@ -2,6 +2,48 @@
 
 All notable changes to Swipe VTT will be documented in this file.
 
+## [1.3.2]
+
+### Added
+- Connect Phone: QR code dialog for connecting a phone as the same user
+  - Scan QR code or copy link to bypass the join screen's greyed-out user restriction
+  - Standalone phone-join page with auto-join flow and password prompt
+  - "Connect Phone" button injected into User Configuration dialog
+  - Auto-shows on desktop load with "Don't show again" user flag
+  - Localhost detection uses LAN IP for QR code URL
+
+### Fixed
+- Minor refinements to canvas pan handling and hook cleanup
+
+## [1.3.0]
+
+### Added
+- Expanded Sheet mode for tablets in canvas-disabled mode (premium)
+  - Multi-column layout with 2-5 visible sections based on screen width
+  - Responsive column sizing with min/max constraints
+- Canvas-disabled background image with vignette overlay
+  - Default castle background included, customizable via settings
+  - File picker with Browse/Clear in settings
+- Sidebar long-press handler for tablets (right-click equivalent)
+  - Long-press on sidebar tab buttons triggers pop-out window
+- Canvas pan detection: unfreezes canvas when external modules pan the viewport
+- Dice So Nice prompt in Aggressive performance mode (optional, no longer automatic)
+
+### Changed
+- Desktop mobile mode setting renamed for clarity (`enabledOnDesktop`)
+- Performance mode dialog: "Use 1x Resolution" renamed to "Disable Pixel Ratio Resolution"
+- Aggressive mode description clarifies Dice So Nice is offered, not forced
+- Mobile UI controls now visible in canvas-disabled mode on tablets
+- Ability card styling refinements (font sizes, spacing, touch targets)
+- Combat section: larger subtab touch targets, normalized font weights
+- Condition items: larger min-height, improved active/inactive text colors
+- Image popout max-height increased to 95dvh
+
+### Fixed
+- Character carousel now works without canvas (reads scene tokens directly)
+- Canvas freeze indicator responding to external pan events
+- Sheet button focus outline removed on mobile
+
 ## [1.2.8]
 
 ### Fixed
