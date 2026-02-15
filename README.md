@@ -23,13 +23,15 @@ https://github.com/user-attachments/assets/7a10110e-a374-44f7-a0b4-386a25cb08b0
 - **Application window resize** - resizes or rescales handouts, journals and other application windows to fit in view
 - **Character carousel** - see all characters you have ownership to in the swipable carousel
 - **Basic sheet** - tab for basic rolls as well as hp management is free (DnD5e / Daggerheart)
+- **Canvas Freeze** - Enable on low-end devices to help conserve battery and improve performance - canvas remains frozen when unused
+- **Image Optimizer** - Compress scene backgrounds and tokens for faster loading
 
 ### FOR PATREON SUPPORTERS (Amethyst tier)
 
 Premium features require a [Patreon](https://www.patreon.com/carolingiandev) subscription on Amethyst tier
 
 - **Full Mobile Character Sheets** - Drawer UI with all tabs - Inventory, Features, Spells, and a Combat section (currently for DnD5e / Daggerheart)
-- **Combat Section** - Quick access to attacks, saves, and ability checks
+- **Combat Section** - Quick access to attacks, saves, and ability checks with item descriptions
 - **Inventory and Spellbook** - Touch-friendly lists with activation and preparation buttons
 - **Chat Drawer** - Slide-out chat panel optimized for mobile
 - **Spell Template Placer** - Touch-friendly spell template positioning - combine with free module **Flash Token Bar** for auto-targeting
