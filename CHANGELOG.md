@@ -2,6 +2,28 @@
 
 All notable changes to Swipe VTT will be documented in this file.
 
+## [1.3.7]
+
+### Added
+- Party Group setting: GM can select a dnd5e Group actor as the party
+  - Group members appear in the mobile carousel for all players with LIMITED+ permission
+  - Works even without tokens on the current scene
+- Group actor mobile sheet with 3 tabs (all free):
+  - Members: shows avatar, name, class, AC, HP bar; tap to switch to that character
+  - Inventory: editable currency grid, collapsible item categories, containers with contents, use button for consumables, expandable item details
+  - Biography: enriched summary and full description
+- Wake lock to prevent screen dimming and frequent reloads on mobile
+- Improved display of Foundry game settings on mobile screen sizes
+
+## [1.3.5]
+
+### Added
+- Quantity editor dialog for inventory items (tap quantity to adjust)
+- Safari notification for iOS users about potential compatibility
+
+### Changed
+- Assistant GM can now load premium features without needing to re-authenticate
+
 ## [1.3.2]
 
 ### Added
