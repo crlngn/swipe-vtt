@@ -22,7 +22,7 @@ All notable changes to Swipe VTT will be documented in this file.
 - Safari notification for iOS users about potential compatibility
 
 ### Changed
-- Assistant GM can now load premium features without needing to re-authenticate
+- Assistant GM can now load Amethyst Club features without needing to re-authenticate
 
 ## [1.3.2]
 
@@ -141,7 +141,7 @@ All notable changes to Swipe VTT will be documented in this file.
 
 ### Added
 - World token system for offline GM premium access
-  - Players can access premium features when GM is offline using cached world tokens
+  - Players can access Amethyst Club features when GM is offline using cached world tokens
   - World-scoped cache prevents cross-world cache leakage
   - 7-day token validity with automatic refresh
 - Link code authentication for Patreon (alternative to popup auth)
@@ -206,5 +206,5 @@ All notable changes to Swipe VTT will be documented in this file.
 - Token interaction via touch (tap, double-tap, long-press)
 - Bottom drawer UI with avatar carousel
 - D&D 5e character sheet support
-- Premium features system with Patreon integration
+- Amethyst Club features system with Patreon integration
 - Socketlib integration for GM-player bundle sharing
