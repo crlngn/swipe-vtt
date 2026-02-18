@@ -2,6 +2,29 @@
 
 All notable changes to Swipe VTT will be documented in this file.
 
+## [1.5.0]
+
+### Added
+- Mobile camera dock enhancements
+  - Floating, touch-draggable camera dock on phones (position: fixed, drag to reposition)
+  - Camera quick controls dialog with Show/Hide Dock, Hide/Show All, and Speaker Only buttons
+  - Speaker-only camera mode: CSS grid stacking with opacity crossfade, GM camera always visible as fallback
+  - Speaker-only setting in Swipe VTT Settings under new Camera Views fieldset
+  - Navigation arrows in camera controls to browse between camera views
+  - Touch-hover simulation for camera view controls (tap to show, tap outside to dismiss)
+  - Camera dock starts minimized on mobile devices
+  - Camera dock hidden until module finishes applying layout classes
+- CameraPopout touch drag support (Foundry popouts use mouse-only drag by default)
+- Compatibility with crlngn-ui floating dock (skips conflicting handlers when active)
+
+## [1.4.0]
+
+### Added
+- Opened module to all members of Patreon, even free. Rename Premium features to Amethyst Club features
+
+### Fixed
+- CSS breakpoints for hiding mobile controls
+
 ## [1.3.7]
 
 ### Added
