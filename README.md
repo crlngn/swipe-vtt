@@ -92,7 +92,7 @@ https://github.com/crlngn/swipe-vtt/releases/latest/download/module.json
   - if you login on **mobile device or Foundry Desktop App** as GM, the popup above won't work. 
     Instead, use the "Authenticate with Link Code" option to get a code and paste it on the input box
 4. Authorize the connection
-5. Premium features unlock automatically for GM and players
+5. Special features unlock automatically for GM and players
 
 ## Support
 - [Discord](https://discord.gg/kjmJzgUJ)
