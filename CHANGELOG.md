@@ -2,6 +2,86 @@
 
 All notable changes to Swipe VTT will be documented in this file.
 
+## [1.10.0]
+
+### Added
+- **Standalone mode** for memory-constrained phones (iPhones, low-RAM Android)
+  - Lightweight HTML app that bypasses Foundry's client entirely
+  - Socket.io connection with session auth and real-time world data sync
+  - Full character sheet rendering (combat, inventory, spellbook, features, biography, effects)
+  - GM-proxied dice rolling with mobile roll dialog
+  - Chat drawer with GM-relayed rendered HTML messages
+  - Effects/conditions with status toggling
+  - Hit die rolls, short rest, and long rest
+  - Group actor Members tab with member summaries
+  - Activity use, attack, and damage buttons
+  - Premium bundle loading
+  - Pause/unpause game and log out
+- **Performance mode overlay dialog** for mobile devices
+  - Native overlay replaces ApplicationV2 window on phones
+  - Standalone as a selectable performance mode tier
+  - Player-side mode override with reset button
+  - Seamless navigation between standalone ↔ Foundry modes
+- Invite URL override setting for VPN/proxy QR code URLs
+- Stream view: compendium packs init, sheet config, GM journal sharing
+
+### Fixed
+- Species/background showing as raw IDs instead of names
+- Item uses display when `value` is null (compute from `max - spent`)
+- Activity damage formulas showing `@mod`/`@prof` instead of resolved values
+- Save DC not displayed on save-type activities
+- Token double-tap for unsupported actor types now opens native sheet
+- Chat drawer crash in stream view
+- Quick controls showing canvas buttons where no canvas exists
+- enrichHTML crashes in standalone mode (try/catch across all sections)
+
+### Changed
+- Normalize item/class/feature images to 2.35rem across all systems
+- Font variable fallback chain with `--mobile-font-fallback`
+- Roll dialog scrollable body with max-height constraint
+- Journal sheets fullscreen on mobile
+- Rename "Connect Phone" to "Swipe QR Code"
+- Deduplicate dice tooltip color/filter rules
+
+## [1.7.4]
+
+### Changed
+- Sheet-Only mode now uses Foundry's stream view to reduce module load on iOS
+
+## [1.7.1]
+
+### Added
+- Memory diagnostics utility for troubleshooting device performance
+
+## [1.7.0]
+
+### Added
+- GM-side user mobile configuration
+  - GM can set performance mode per-user from desktop settings
+  - Force mode option for users whose devices won't load in default mode
+  - Useful for iPhones with strict memory limits on heavy worlds
+
+## [1.6.3]
+
+### Changed
+- Disable crlngn-ui floating dock on mobile devices
+- Move video button between logout and volume in quick controls
+
+## [1.6.1]
+
+### Added
+- Push-to-Talk button above quick controls toggle (touch-hold to broadcast)
+- A/V settings button in camera dialog to open Foundry's config
+
+## [1.6.0]
+
+### Added
+- Settings cleanup utility for orphaned module settings
+- Workaround for Seasons & Stars infinite recursion crash on mobile
+
+### Changed
+- Allow GM to load premium via world token on new devices
+
 ## [1.5.0]
 
 ### Added
