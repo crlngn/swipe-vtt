@@ -2,6 +2,20 @@
 
 All notable changes to Swipe VTT will be documented in this file.
 
+## [1.10.1]
+
+### Added
+- **Generic MobileTemplatePlacer** for all systems (PF2e, Daggerheart, etc.)
+  - Template previews from any system are now touch-draggable on mobile
+  - Uses PIXI childAdded detection on canvas.templates.preview
+  - Initial position centers on user's token or viewport center
+  - Proper system cleanup via synthetic rightdown to terminate system placement flows
+- Generic system CSS overrides for PF2e actor sheets on mobile
+
+### Fixed
+- Mobile application dialog min-width and max-width sizing
+- Settings user names truncation using max-width instead of white-space
+
 ## [1.10.0]
 
 ### Added
