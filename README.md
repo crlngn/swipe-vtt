@@ -5,8 +5,9 @@ A mobile-friendly interface for [Foundry VTT](https://foundryvtt.com/) with touc
 If you are logged in to Patreon, as a GM all of your players will get access to special features. The GM account needs to have previously logged in and connected to Patreon for the player to access special features.
 **Consider supporting the module to keep the lights on.**
 
-
 https://github.com/user-attachments/assets/7a10110e-a374-44f7-a0b4-386a25cb08b0
+
+https://github.com/user-attachments/assets/0b579978-72c2-4019-af2c-bec1bbb04a22
 
 
 ## Features
@@ -51,7 +52,7 @@ The module has been tested and works well with **Flash Token Bar** and **Carolin
 
 - Foundry VTT v13+
 - [socketlib](https://foundryvtt.com/packages/socketlib) module
-- For sheets: D&D 5e System 4.0+ or Daggerheart
+- For sheets: D&D 5e System 4.0+ / PF2e / Daggerheart
 
 ## Installation
 
