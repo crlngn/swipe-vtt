@@ -2,6 +2,85 @@
 
 All notable changes to Swipe VTT will be documented in this file.
 
+## [1.16.0]
+
+### Added
+- **Controls settings** (General tab) with two new options:
+  - **Hide Quick Controls** — hides the floating quick controls toolbar; on tablets also hides the settings button, on phones the settings button remains since Foundry's sidebar is hidden
+  - **Hide Avatar Carousel** — hides the character avatar carousel; sheets can still be opened by double-tapping tokens
+  - When quick controls are visible, Foundry's `#players` list is hidden on desktop to avoid overlap
+  - Controls fieldset visible on desktop too with a note that settings apply to touch devices only
+
+### Fixed
+- `/stream` view no longer modified by Swipe VTT — Foundry's native stream view works as intended
+
+### Removed
+- Stream mode initialization (streamReady hook, background override, stream CSS, /stream redirect logic)
+
+## [1.15.0]
+
+### Added
+- Player premium: cache-first fallback, version-based cache invalidation
+- PF2e spellbook search
+
+### Fixed
+- Image optimizer button fixes
+
+## [1.14.0]
+
+### Added
+- PF2e spellbook: signature spells, spontaneous casting, variable actions, rank fixes
+- Collapsible card content in chat, chat drawer sizing improvements
+- Memory diagnostics improvements
+- Tools filter for standalone
+
+### Fixed
+- Tool rolls and standalone prepared data
+- Reload loop fix
+
+## [1.13.0]
+
+### Fixed
+- Scope mobile CSS rules to `body.swipe-vtt` to prevent desktop leakage
+- GM-offline warnings: track user active state, fix notification visibility
+- Roll dialog mode info font sizes
+
+## [1.12.2]
+
+### Added
+- GM-offline warnings for standalone rolls, edits, and actions
+
+### Fixed
+- Chat toggle button z-index above chat drawer
+- Settings checkbox color
+
+## [1.12.1]
+
+### Added
+- Pinch-to-zoom for application windows with header touch handling
+- Journal quick control, dynamic z-index for drawers
+- Blade Runner chat styling
+
+### Changed
+- Clarify image optimizer descriptions to reassure desktop scenes are unaffected
+
+## [1.12.0]
+
+### Added
+- PF2e NPC sheet: shield, initiative, traits, notes; hide feats/crafting
+- PF2e inventory: native coin API, editable qty for contained items
+- PF2e sheet: crafting, effects, feats, inventory, spellbook sections + roll dialog setting
+- Gate mobile sheets on `enableMobileSheets` setting with fallback carousel
+
+### Changed
+- Sheet-only mode stays on `/game` with noCanvas instead of redirecting to `/stream`
+- Gate standalone mode to supported systems only (dnd5e)
+
+### Fixed
+- Window header tap and position jump on mobile
+- Temp Max row hidden in HP dialog for systems without tempmax (PF2e)
+- Image optimizer dialog not showing scene analysis on first open
+
 ## [1.10.1]
 
 ### Added
