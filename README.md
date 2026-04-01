@@ -2,9 +2,9 @@
 
 A mobile-friendly interface for [Foundry VTT](https://foundryvtt.com/) with touch controls, optimized character sheets, and performance enhancements for phones and tablets. Use it as a second screen companion for easy access to character sheet, roll saves, skills, attacks, update of HP, etc. - but if your PC fails you can play from the phone!
 
-**Note for iPhone users:** While the module works on iOS, on iPhones the system reloads the tab if the world is using too much memory. So if your wrold is heavy, iOS will reload the page constantly. There's not much I can do about it, but I've added a memory diagnostics for you to check your world. You want the calculation to not be more than 400MB. If nothing works, on DnD5e I've added Standalone mode which works independently of Foundry but doesn't have many Foundry features.
+**Note for iPhone users:** While the module works on iOS, iPhones and iPads limit memory used per tab. So if your world is heavy, iOS will reload the page constantly. There's not much I can do about it, but I've added a memory diagnostics for you to check your world. Try to keep everything in compendium whenever possible and optimize scene images. You want the calculation of world memory to not be more than ~400MB. If nothing works, on DnD5e I've added Standalone mode which works independently of Foundry but doesn't have many Foundry features.
 
-If you are logged in to Patreon, as a GM all of your players will get access to special features. The GM account needs to have previously logged in and connected to Patreon for the player to access special features.
+If you log in to Patreon as a GM, all of your players will get access to special features. The GM account needs to have previously logged in and connected to Patreon for the player to access special features.
 **Consider supporting the module to keep the lights on.**
 
 https://github.com/user-attachments/assets/7a10110e-a374-44f7-a0b4-386a25cb08b0
