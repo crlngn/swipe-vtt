@@ -25,7 +25,7 @@ https://github.com/user-attachments/assets/0b579978-72c2-4019-af2c-bec1bbb04a22
 - **Image Optimizer** - Compress scene backgrounds and tokens for faster loading
 - **Application window resize** - resizes or rescales handouts, journals and other application windows to fit in view
 - **Character carousel** - see all characters you have ownership to in the swipable carousel
-- **Basic sheet** - tab for basic rolls as well as hp management is free (DnD5e / Daggerheart)
+- **Basic sheet** - tab for basic rolls as well as hp management is free (DnD5e / Daggerheart / PF2e)
 - **Canvas Freeze** - Enable on low-end devices to help conserve battery and improve performance - canvas remains frozen when unused
 - **Image Optimizer** - Compress scene backgrounds and tokens for faster loading
 - **Settings cleaner** - Clean old settings left over by modules you don't use anymore
@@ -34,7 +34,7 @@ https://github.com/user-attachments/assets/0b579978-72c2-4019-af2c-bec1bbb04a22
 
 Amethyst Club features require a [Patreon](https://www.patreon.com/carolingiandev) membership on any tier
 
-- **Full Mobile Character Sheets** - Drawer UI with all tabs - Inventory, Features, Spells
+- **Full Mobile Character Sheets** - Drawer UI with all tabs - Inventory, Features, Spells (DnD5e, Daggerheart, PF2e)
 - **Combat Section** - Quick access to actions by type and item descriptions (DnD5e)
 - **Inventory and Spellbook** - Touch-friendly lists with activation and preparation buttons
 - **Chat Drawer** - Slide-out chat panel optimized for mobile
