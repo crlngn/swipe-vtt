@@ -2,6 +2,61 @@
 
 All notable changes to Swipe VTT will be documented in this file.
 
+## [1.18.1]
+
+### Added
+- **Inventory: Attune/Unattune toggle** — items with attunement show an attune button in expanded details
+- **Inventory: Delete item** — remove button with confirmation dialog in expanded item details
+- **Inventory: Add Item** — button to add items from the compendium browser (filtered to inventory types)
+- **Macro hotbar drawer** — mobile-friendly macro hotbar with grid layout matching Foundry core style
+  - Toggle button in button stack (hidden by default, enable in Settings > Controls)
+  - Page navigation between hotbar pages
+  - Long-press context menu: add, edit, remove macros
+  - Macro search dialog for adding from world macros or compendium packs
+  - Drag-and-drop to reorder or swap macro slots
+  - Drag handle to dismiss drawer
+- Fade mask on scrollable item descriptions in expanded details
+
+### Fixed
+- **TextureLoader deprecation** — use `foundry.canvas.TextureLoader` (Foundry V13+)
+- **Senses deprecation** — read from `senses.ranges.*` for dnd5e 5.3+ compatibility
+- **Window drag position sync** — close button no longer snaps window to original position after dragging
+- **Dice bar positioning** — always appears above the dice button regardless of other buttons
+- Activity name overflow in inventory — truncated with ellipsis
+- Drawer handle touch targets increased for easier interaction
+
+## [1.17.4]
+
+### Added
+- Auto-optimization for scenes via setting and improved optimizer prompt dialog
+- Scene image check to warn when images exceed device max texture size
+- Default scene image size threshold changed to 2048px
+
+### Fixed
+- Clean up premium loader notifications (use LogUtil, mobile-only reporting)
+
+## [1.17.0]
+
+### Added
+- **MiniCanvas** — lightweight grid + token view for noCanvas mode
+  - MiniCanvas enable/allow settings with opt-in prompt
+  - MiniCanvas support for standalone mode
+- Support delete templates via socket in standalone mode
+- Send target token IDs with standalone roll requests
+
+### Fixed
+- Guard preventDefault with cancelable check in touch handlers
+- Standalone MiniCanvas token undo
+
+## [1.16.3 – 1.16.8]
+
+### Fixed
+- Premium loader improvements and debug messages
+- Player bundle caching: cache check before patron status check
+- Patreon token invalidation fix
+- Patreon re-authentication prompt
+- Patreon connection window showing connected without valid session token
+
 ## [1.16.0]
 
 ### Added
