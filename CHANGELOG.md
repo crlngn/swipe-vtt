@@ -2,6 +2,53 @@
 
 All notable changes to Swipe VTT will be documented in this file.
 
+## [1.20.0]
+
+### Added
+- **Wall geometry on Simplified Token Map** — a 60ft circular reveal around the player's selected (or last-dragged) token shows nearby wall lines, with a feathered/gradient outer edge. Closed and locked doors render distinct from solid walls; open doors render dashed.
+- **Live door state propagation** — toggling a door open/closed/locked on the GM canvas updates the simplified map for connected players in real time (via `updateWall` hook in-Foundry, and a new socket broadcast for Standalone clients).
+- **GM setting: "Show Walls on Simplified Token Map"** — world-scope toggle (default ON) under the GM-only section of the Swipe VTT settings dialog. Disable for theatre-of-the-mind scenes.
+- **Secret door privacy** — secret doors (`door=SECRET`) and non-blocking walls (`move=NONE`) are filtered server-side before reaching player clients.
+- **GM-offline blocks player movement** — if no GM is connected, MiniCanvas drags are rejected client-side with a "GM must be online" notification (in-Foundry and Standalone).
+
+### Fixed
+- **SocketUtil missed `socketlib.ready` hook** — on player clients where socketlib finished initialization before our module, `Hooks.once` never fired and `SocketUtil.socket` stayed null. Visibility relay, premium bundle requests, and the new movement validator silently no-op'd. Now registers synchronously when socketlib is already loaded.
+- **Simplified Token Map selection wiped on token refresh** — `createTokens()` now snapshots and restores the previous selection and target state, so server-side token updates, drags, or the periodic sync no longer clear the player's active selection.
+- **Wall radius followed wrong token after drag** — the dragged token now becomes the active selection at drop time, so the 60ft wall reveal centers on the last-moved token, not the player's main character.
+
+## [1.19.2]
+
+### Added
+- **MiniCanvas wall collision check on player drags** — players can no longer drag tokens through scene walls on the Simplified Token Map. Drag commits are validated by the GM client via socketlib using Foundry's polygon backend (`CONFIG.Canvas.polygonBackends.move.testCollision`); blocked moves snap back with a notification. Honors closed/locked doors and one-way walls; open doors and `move=NONE` walls allow passage.
+
+### Fixed
+- **GM premium cache stale mid-session** — refresh the GM's premium cache during the session so players get the current bundles after the GM reconnects or refreshes Patreon status.
+
+## [1.19.1]
+
+### Changed
+- **GM premium relay when Swipe disabled** — GMs with "Enable Swipe in this client" off now run the premium socket + session init only, so players can still validate premium through them. No mobile UI is loaded on the GM's client.
+
+### Fixed
+- **World-token fallback for fresh installs** — players whose GM is online but unresponsive (or returns a generic error) now fall back to the world token after the cache, closing the gap on fresh installs.
+
+## [1.19.0]
+
+### Added
+- Toggle to disable Swipe in a specific client (per-user)
+- GM / Assistant GM users now appear in the Swipe mode configuration in Settings
+- QR code link for all players (shared by the GM)
+- Touch-drag and window drag handler improvements
+
+## [1.18.2]
+
+### Fixed
+- Macro hotbar drawer z-index when the sheet carousel is open
+- Macro slot image expanding on long press
+
+### Changed
+- Macro hotbar button is now visible by default (`hideMacroButton` default: false)
+
 ## [1.18.1]
 
 ### Added
