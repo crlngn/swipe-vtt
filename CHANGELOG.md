@@ -2,6 +2,11 @@
 
 All notable changes to Swipe VTT will be documented in this file.
 
+## [1.20.1]
+
+### Fixed
+- **Assistant GMs couldn't load premium bundles** — `socketlib.executeAsGM` short-circuits to a local handler when the caller's `isGM` flag is true, which in V13 includes Assistant GMs. The Assistant would dispatch the bundle request to themselves, fail the patron check, and end up with premium disabled. Bundle requests (and version-broadcast re-fetches) now route explicitly to the active primary GM.
+
 ## [1.20.0]
 
 ### Added
