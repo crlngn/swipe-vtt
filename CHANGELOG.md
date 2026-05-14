@@ -2,6 +2,18 @@
 
 All notable changes to Swipe VTT will be documented in this file.
 
+## [1.21.1]
+
+### Fixed
+- **`Token#detectionModes` shape change on Foundry V14** — V14 switched detection modes from an `ArrayField` to a `TypedObjectField` keyed by mode id, so `(t.detectionModes ?? []).map(...)` threw `.map is not a function` when switching levels. Added `TokenCompat.getDetectionModes` to normalize the two shapes; applied to the standalone scene-packet builder, the standalone `createToken` broadcast, and the MiniCanvas sight-range / visibility computations.
+- **Actor cache build threw on dnd5e 5.3+** — `details.race` and `details.background` became getter-only in dnd5e 5.3, breaking the standalone actor-cache builder. Now version-gated: dnd5e ≥ 5.3 shallow-clones `details` before mutating, older versions keep the direct-assignment path.
+
+## [1.21.0]
+
+### Added
+- **Foundry V14 compatibility for scene image features** — V14 moved `Scene#background` and `Scene#foreground` onto an embedded `Level` document and emits a deprecation warning every time the legacy accessors are read. Image optimization, the optimized-image swap-in, and memory diagnostics now use a version-aware adapter (`SceneCompat`) that reads from `scene.firstLevel` on V14+ and the legacy fields on V13. Single-level scenes behave identically across versions.
+- **Multi-level scene support for image optimization and memory tally on V14** — multi-level scenes (a V14-only feature) now have every Level's background/foreground analyzed by the optimizer dialog and counted in the texture-memory estimate. Per-level entries are labeled with the Level name (e.g., "Background (Upper Floor)") to disambiguate.
+
 ## [1.20.1]
 
 ### Fixed
