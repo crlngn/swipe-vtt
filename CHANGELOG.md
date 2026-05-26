@@ -2,32 +2,7 @@
 
 All notable changes to Swipe VTT will be documented in this file.
 
-## [2.0.0]
-
-### Breaking
-
-- **Foundry V14+ required.** v2.x targets Foundry V14 exclusively (`compatibility.minimum: "14"`). V13 worlds will not auto-update to v2 — V13 users should stay on v1.22.x. Module ID is unchanged (`swipe-vtt`) so settings, flags, and premium auth survive the upgrade for users moving from V13 to V14.
-- **Standalone client + phone-join page disabled on V14.** Foundry V14 serves module HTML files as `text/plain` (anti-XSS) and gates socket.io behind httpOnly session cookies, breaking both the previous Standalone SPA and the `phone-join.html` companion page. The QR Code feature now points at Foundry's native `/join` page instead. Standalone source remains in-tree for a future proxy-bridge implementation but is not loaded on V14.
-
-### Added
-
-- **Mobile Profile — paired user for phone login.** GMs can create a `(Swipe)` duplicate User per player so a phone can log into Foundry's native `/join` page without conflicting with the player's desktop session. The duplicate inherits role, assigned character, color, avatar, and permissions from the original, and is granted `OWNER` permission on every actor the original owns. Multiple sessions for the same player coexist (V14 allows it), so phone and desktop can both be live.
-  - Passwordless by default; the GM can set a password via the QR dialog if the QR could be seen by others.
-  - GM users can also be duplicated — the duplicate gets the `ASSISTANT` role rather than `GAMEMASTER` so the phone session doesn't act as a second full GM.
-  - Bidirectional flag bookkeeping (`mobileDuplicateOf` on the duplicate, `mobileDuplicateId` on the original) with defensive orphan-flag repair if the back-reference is ever lost.
-- **Auto-create on QR dialog open.** When the GM opens the Swipe QR Code dialog for a player who doesn't yet have a Mobile Profile, one is created automatically and the QR targets it. Controlled by the world-scope **Auto-Create Mobile Profile** setting; off by default for safety, can be enabled per-world.
-- **Auto-resync of duplicate from original.** When the original user's role, character, color, avatar, or permissions change, the duplicate is auto-mirrored via the `updateUser` hook (active GM only, to avoid concurrent writes from multiple connected GMs). Hotbar, pronouns, and similar personalization are intentionally not synced so the phone can develop its own.
-- **Auto-cleanup on user deletion.** Deleting a user via Foundry's User Management cascades correctly: deleting the original cascade-deletes the duplicate; deleting the duplicate clears the back-reference flag on the original. Active-GM-gated.
-- **Manage Mobile Profile in Settings → Users tab.** Each non-duplicate user row has an Add Mobile Profile / Remove Mobile Profile button in its Performance Overrides section. `(Swipe)` users are filtered out of the user list so the GM sees one row per player.
-- **Connect Phone QR dialog rework.** Simplified to a single QR + URL row when the duplicate is already present, plus a per-row Set Password / Add Mobile Profile button gated to GMs. The dialog now correctly targets the user being edited via the User Config (was previously falling back to the GM's own id).
-- **#players widget integration.** The active-players widget hides `(Swipe)` rows when both sessions are inactive or only the original is connected, and appends a small mobile icon next to the player's name when the phone session is live. If only the phone is connected, the duplicate's row replaces the original in the list. The icon inherits the row's text color and follows whichever row is visible.
-
-### Changed
-
-- **QR code targets `/join`.** The Swipe QR Code dialog now encodes `{base}/join?user={id}&name={name}` (Foundry's native login page) instead of the broken-on-V14 `standalone.html` or `phone-join.html` paths. Player picks their `(Swipe)` username from the dropdown and joins; passwordless flow takes them straight to `/game`.
-- **Manifest `compatibility.minimum` raised to `"14"`.** Foundry's auto-updater respects this — V13 worlds won't be offered v2 even if the package directory serves v2 as latest.
-
-
+## [1.21.1]
 
 ### Fixed
 - **`Token#detectionModes` shape change on Foundry V14** — V14 switched detection modes from an `ArrayField` to a `TypedObjectField` keyed by mode id, so `(t.detectionModes ?? []).map(...)` threw `.map is not a function` when switching levels. Added `TokenCompat.getDetectionModes` to normalize the two shapes; applied to the standalone scene-packet builder, the standalone `createToken` broadcast, and the MiniCanvas sight-range / visibility computations.
