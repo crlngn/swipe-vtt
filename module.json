@@ -4,7 +4,7 @@
   "description": "Mobile-friendly interface for Foundry VTT with touch controls, optimized character sheets, and performance enhancements for phones and tablets.",
   "version": "1.22.3",
   "url": "https://github.com/crlngn/swipe-vtt",
-  "manifest": "https://raw.githubusercontent.com/crlngn/swipe-vtt/main/module.json",
+  "manifest": "https://raw.githubusercontent.com/crlngn/swipe-vtt/v1/module.json",
   "download": "https://github.com/crlngn/swipe-vtt/releases/download/v1.22.3/module.zip",
   "bugs": "https://github.com/crlngn/swipe-vtt/issues",
   "readme": "https://github.com/crlngn/swipe-vtt#readme",
