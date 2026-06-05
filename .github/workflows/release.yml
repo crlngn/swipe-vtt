@@ -65,7 +65,7 @@ jobs:
               "id": "'"$REPO_NAME"'",
               "release": {
                 "version": "'"$VERSION"'",
-                "manifest": "https://github.com/${{ github.repository }}/releases/latest/download/module.json",
+                "manifest": "https://github.com/${{ github.repository }}/releases/download/v'"$VERSION"'/module.json",
                 "notes": "https://github.com/${{ github.repository }}/releases/tag/v'"$VERSION"'",
                 '"$COMPAT_JSON"'
               }
