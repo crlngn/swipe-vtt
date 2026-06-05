@@ -2,6 +2,41 @@
 
 All notable changes to Swipe VTT will be documented in this file.
 
+## [Unreleased]
+
+## [2.1.0] - 2026-06-04
+
+### Added
+
+- **Standalone mobile client restored on Foundry V14 — now proxy-hosted.** V14 broke the in-Foundry Standalone SPA (module HTML served as `text/plain` + socket.io gated behind httpOnly session cookies). The client is now hosted on the Carolingian proxy and reaches the world through a bridge instead of connecting to Foundry directly. The GM's Foundry module opens an outbound WebSocket bridge to the proxy; the proxy relays envelopes between the GM and each player's browser, keyed by world. The GM module remains the authority for all data and rolls; the proxy is a stateless router and socketlib stays intra-world. Phone connects by scanning the QR / opening a `?world=<worldId>` link.
+- **GM approval flow for standalone joins.** When a player opens the standalone link, the GM gets a Join Approval prompt ("{n} user(s) joining from Standalone link") with Approve per request. Controlled by the world-scope **Standalone Approval Policy** setting: *prompt every time* (default), *auto-approve players I've approved before* (trusted), or *auto-approve everyone* (dev only). An inline **Auto-approve mobile connection requests** toggle on the approval dialog and a matching control in Settings → Users mirror the same policy.
+- **Play tokens — persistent, GM-revocable standalone sessions.** Approved devices receive an HMAC-signed play token (signed with an auto-generated per-world secret) so a phone stays logged in across reconnects for ~14 days without re-approval. The active-token registry is world-scoped and verified at every player handshake.
+- **Per-user password fast-path.** A GM can set an optional standalone password per user (hashed, stored world-side, never copied from the Foundry account); entering it skips the approval prompt entirely on join.
+- **Disconnect standalone user.** A GM can revoke a user's standalone access from the user controls; active sessions are dropped ("Disconnected by GM" → redirect) and the device must be approved again to reconnect.
+- **Standalone presence in the GM Players list.** Connected standalone players set `User#active`, so they show un-greyed in the GM's Players widget instead of appearing offline. (GM-client-only.)
+- **Image relay with IndexedDB caching.** Scene, token, and actor images that the standalone client can't fetch directly (DDB/system assets) are relayed through the bridge on demand and cached in IndexedDB, intercepted before render so there are no broken-image 404s. Status-effect icons are pre-resolved.
+- **Theme mirroring.** The standalone client mirrors the world's Swipe theme, defaulting to the crlngn-ui teal (`rgb(78,139,158)`).
+- **Macro hotbar on standalone.** Players see, add, remove, and execute their hotbar macros; execution briefly drives the player's mini-canvas selection and restores the GM's selection afterward.
+- **Font Awesome Free v6 in the standalone UI.** The standalone client no longer depends on FA Pro weight classes so it renders correctly without a Pro license.
+- **Live document sync to the standalone client.** GM-side actor and active-effect changes — applying or clearing a condition, editing HP, adding/removing an effect — now relay to connected standalone players in real time instead of going stale until reconnect. A player's own condition toggles update instantly (optimistic) and reconcile against the GM's authoritative state. Only actors a player can see are relayed.
+- **Offline (GM-offline) read-only access on standalone.** When the GM is offline, a player can still open their character read-only from the last session cached on the device; the session upgrades to live automatically when the GM reconnects.
+- **Spell sections by casting method on mobile sheets.** The dnd5e mobile spellbook and the Combat tab now break always-available spells into At-Will / Innate / Ritual sections ahead of the leveled groups, matching the core sheet. The spellbook header also shows the prepared-spell count (`value/max`), excluding always-prepared spells and cantrips.
+- **Standalone opens the expanded sheet layout on tablets by default.** On a tablet-width device the standalone client now defaults to the wide multi-column layout; the toggle in mobile settings still wins, and in-Foundry behaviour is unchanged.
+
+### Changed
+
+- **Supersedes the 2.0.0 "Standalone disabled on V14" limitation.** The QR Code dialog can again offer the Swipe standalone client on V14 (via the proxy bridge) alongside the native `/join` Mobile Profile flow.
+
+### Fixed
+
+- **Standalone condition highlights stay in sync.** Active conditions on the Effects tab no longer lose their selected state after a data refresh, and toggling a condition reflects immediately rather than reverting.
+- **Standalone Combat tab action filtering.** Spells now appear under the correct action type — bonus-action spells such as Divine Smite were missing — by resolving activation the way dnd5e does (item casting time unless the activity overrides it). Feature and spell use counts (e.g. Lay On Hands `9/10`) now show.
+- **Standalone labels no longer show raw localization keys** for feature types and classes when the relayed i18n snapshot lacks a translation.
+- **Custom dice icons render on the dice bar** in both standalone and in-Foundry mobile, filling Font Awesome Free gaps.
+- **Long token name labels stay centered** under the token on the mini-canvas.
+- **Standalone mode is selectable again** in the user Performance Mode dialog and the GM Users-tab (it was disabled during the V14 work). Picking it now opens the proxy-hosted client instead of falling back to Sheet-Only, gated on the world having a valid proxy token.
+- **Double-tapping a token in the standalone mini-canvas** opens its character sheet again (it errored instead of opening).
+
 ## [2.0.0]
 
 ### Breaking
