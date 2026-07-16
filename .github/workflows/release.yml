@@ -72,6 +72,38 @@ jobs:
             }')
           echo "API Response: $API_RESPONSE"
 
+  sync_branch_manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Release Branch
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.release.target_commitish }}
+
+      - name: Sync module.json from Release Assets
+        run: |
+          TAG="${{ github.event.release.tag_name }}"
+          curl -sfL "https://github.com/${{ github.repository }}/releases/download/$TAG/module.json" -o module.json
+
+          # The branch manifest is what Foundry installs from — a dead download
+          # link here breaks every install/update (see issue #14)
+          DOWNLOAD_URL=$(jq -r '.download' module.json)
+          HTTP_CODE=$(curl -sIL -o /dev/null -w "%{http_code}" "$DOWNLOAD_URL")
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "::error::Manifest download URL returns $HTTP_CODE: $DOWNLOAD_URL"
+            exit 1
+          fi
+
+          if git diff --quiet module.json; then
+            echo "module.json already up to date"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add module.json
+          git commit -m "Sync module.json for $TAG"
+          git push
+
   notify_discord:
     runs-on: ubuntu-latest
     needs: release
