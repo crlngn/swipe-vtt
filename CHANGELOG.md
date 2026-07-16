@@ -4,6 +4,13 @@ All notable changes to Swipe VTT will be documented in this file.
 
 ## [Unreleased]
 
+## [2.1.1] - 2026-06-05
+
+### Fixed
+
+- **Premium, Patreon auth, and the standalone client no longer break on LAN/localhost setups.** Dev mode was being inferred from the Foundry hostname, so any world reached over a local address (`localhost`, `192.168.x`, `10.x`, `172.16–31.x`, `*.local`) pointed premium validation, the "Connect with Patreon" / auth-code buttons, and the standalone redirect at the user's *own* machine on port 3847 — which runs no proxy, so the app hung on the loading screen and the auth links hit a dead localhost URL. Dev mode now derives only from the build flag, so production builds always use the hosted proxy.
+- **Connect-phone QR now respects each user's mode.** The QR points at Foundry's native `/join` page by default and only links to the standalone client for users set to **Standalone** in Settings → Users (previously it always linked to standalone whenever a world token existed).
+
 ## [2.1.0] - 2026-06-04
 
 ### Added
