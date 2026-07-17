@@ -101,7 +101,7 @@ https://github.com/crlngn/swipe-vtt/releases/latest/download/module.json
 5. Special features unlock automatically for GM and players
 
 ## Support
-- [Discord](https://discord.gg/kjmJzgUJ)
+- [Discord](https://discord.gg/cAuTaTYda3)
 - [Patreon Community](https://www.patreon.com/carolingiandev)
 - [Report Issues](https://github.com/crlngn/swipe-vtt/issues)
 
