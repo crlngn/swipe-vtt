@@ -4,6 +4,52 @@ All notable changes to Swipe VTT will be documented in this file.
 
 ## [Unreleased]
 
+## [2.4.0] - 2026-08-22
+
+### Added
+
+- **PF2e action-option toggles on the mobile sheet.** The Actions → Encounter tab now shows an **Action Options** section exposing the weapon and class roll-option toggles (Hunt Prey, rogue debilitations, etc.), driven through PF2e's own `toggleRollOption` API. Value toggles get their dropdown; always-active ones show the dropdown only.
+- **PF2e loaded ammunition and reload.** Ranged strikes that use loaded ammo (crossbows, firearms) show the currently loaded rounds with an **editable quantity**, plus a **Reload** aux-action that loads compatible ammo via the system's own `weapon.attach`. Reload auto-picks a single compatible ammo or opens a bottom-sheet picker; reloading an already-loaded weapon lets you swap ammo. Ammo changes update in place, so the expanded strike no longer collapses.
+- **Graceful WebGL context-loss recovery on mobile.** When the browser drops the GPU context under memory pressure (common on phones), the game canvas no longer silently dies — an overlay explains what happened and offers a one-tap reload, for every system.
+
+### Changed
+
+- **iPhones default to Sheets-Only mode** until the player explicitly chooses a performance mode, avoiding heavy canvas loads on first run.
+- **Performance-mode choice now follows the user, not the device.** It persists as a user flag (syncing across browsers and into the proxy-hosted standalone client via the GM relay) instead of per-browser local storage.
+- **Standalone redirect is guarded.** Before sending a player to the standalone client, the module confirms with the proxy that the world is still registered, so a stale local world token no longer strands players on an error page; error screens gained a **Back to Foundry** button.
+- Item descriptions on mobile sheets fade their bottom edge only when the text actually overflows, instead of always looking cut off.
+- Larger default touch targets in the mobile sheet drawer.
+
+### Fixed
+
+- **D&D 5e activity dialogs are usable on phones again.** Non-attack activity dialogs (spell usage, Lay on Hands, rests, etc.) were rendering at desktop width, clipped and nearly untappable. All 5e dialogs now size correctly on mobile, and no longer freeze at the wrong size after being dragged or pinch-scaled.
+- Silenced the Foundry V14 `Scene#templates` deprecation warning triggered by token double-tap and standalone scene sync (templates were merged into Regions in V14).
+- The mobile sheet-interception guard was comparing minified class names and never matched in production builds; it now uses a stable marker.
+
+### Internal
+
+- Production builds no longer ship source maps (module maps are `hidden`; the standalone bundle emits none), and the release now fails hard if a map or `sourceMappingURL` slips into the package. A CC BY-NC-4.0 licence banner is embedded in both built bundles.
+
+## [2.3.0] - 2026-06-26
+
+### Fixed
+
+- **Standalone reconnect leak.** Socket listeners are now bound once per client instead of accumulating on every reconnect.
+- **Mobile-mode memory leaks** from stale event listeners, hooks, and a lingering FPS poll when leaving mobile mode.
+- **MiniCanvas token-update rebuild storm** scoped and polls bounded; fixed a broken scene switch under `noCanvas`, and the mini-canvas now pans to the user's character token on scene change.
+- **Swipe checkbox checkmarks** rendered correctly without Carolingian UI installed.
+- Removed dead SafariCompat Sequencer iOS blend-fix code.
+
+### Changed
+
+- ImageOptimizer scene analysis parallelized and directory browsing de-duplicated for faster optimization.
+
+## [2.2.0] - 2026-06-08
+
+### Fixed
+
+- Mini-canvas double-tap could open the sheets of actors the player doesn't own.
+
 ## [2.1.1] - 2026-06-05
 
 ### Fixed
