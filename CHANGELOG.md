@@ -4,6 +4,28 @@ All notable changes to Swipe VTT will be documented in this file.
 
 ## [Unreleased]
 
+## [2.5.0] - 2026-08-25
+
+### Added
+
+- **PF2e Party sheet (free).** The party actor gets a mobile sheet with three tabs — **Overview** (member roster with avatar, class, HP and AC), **Exploration** (travel-speed summary with Rest and Roll-Initiative actions, plus each member's speed, perception and exploration activity), and **Stash** (the party's shared inventory with editable quantities). The party actor also appears in the avatar carousel.
+- **PF2e familiar support on the mobile sheet.** Familiars previously opened an empty sheet; they now show a **Character** tab (AC and Dying, with the master's name and spellcasting attribute in place of the wounded/initiative boxes familiars don't have), plus **Actions** (familiar abilities) and **Proficiencies** (skills). No Spells tab — familiars can't cast.
+- **PF2e linked ammunition for reload-0 weapons** (bows, slings): the selected ammunition can be picked directly on the strike.
+
+### Changed
+
+- **PF2e damage absorbs temporary HP first.** Applying damage from the mobile HP dialog now routes through the system's own damage application, so temp HP (and a raised shield) is consumed before real HP.
+- **The HP dialog stays open and updates in place.** Heal, Damage and Temp-HP changes now refresh the dialog's current/temp readout immediately instead of requiring you to close and reopen it.
+
+### Fixed
+
+- **Changing a member no longer hijacks the drawer to the party sheet.** An incidental re-render of a party/group actor (e.g. changing a member's ammunition) could open or switch the mobile drawer to the party sheet even when it was never opened; the drawer now only opens on an explicit, user-initiated render.
+- The party/group sheet now refreshes when a member changes while it is already open.
+- PF2e **Dying/Wounded pips** show their filled colour when tapped (a base rule was outspecifying them).
+- The temp-HP **shield icon and `+N` value** now use the same accent colour as the temp segment of the HP bar instead of a fixed blue.
+- The **HP dialog is reachable while a character is at 0 HP / dying**, so you can heal back up — a dying overlay was swallowing the tap.
+- Removed the redundant **dying overlay** that covered the HP numbers in the drawer header; the interactive dying pips on the Character tab remain.
+
 ## [2.4.0] - 2026-08-22
 
 ### Added
