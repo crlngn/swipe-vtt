@@ -1,7 +1,7 @@
 # Swipe VTT
 
 [![alt-text](https://img.shields.io/badge/-Discord-%235662f6?style=for-the-badge)](https://discord.gg/cAuTaTYda3) 
-![GitHub Downloads (specific asset, all releases)](https://img.shields.io/github/downloads/crlngn/swipe-vtt/module.zip?color=2b82fc&label=DOWNLOADS&style=for-the-badge)
+
 
 A mobile-friendly interface for [Foundry VTT](https://foundryvtt.com/) with touch controls, optimized character sheets, and performance enhancements for phones and tablets. Use it as a second screen companion for easy access to character sheet, roll saves, skills, attacks, update of HP, etc. - but if your PC fails you can play from the phone!
 
