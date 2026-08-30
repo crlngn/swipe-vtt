@@ -38,7 +38,7 @@ https://github.com/user-attachments/assets/0b579978-72c2-4019-af2c-bec1bbb04a22
 
 ### FOR PATREON FOLLOWERS (AMETHYST CLUB)
 
-Amethyst Club features require a [Patreon](https://www.patreon.com/carolingiandev) membership on any tier
+Amethyst Club features require a [Patreon](https://www.patreon.com/carolingiandev) membership (any amount)
 
 - **Full Mobile Character Sheets** - Drawer UI with all tabs - Inventory, Features, Spells (DnD5e, Daggerheart, PF2e)
 - **Combat Section** - Quick access to actions by type and item descriptions (DnD5e)
