@@ -34,15 +34,15 @@ https://github.com/user-attachments/assets/0b579978-72c2-4019-af2c-bec1bbb04a22
 - **Canvas Freeze** - Enable on low-end devices to help conserve battery and improve performance - canvas remains frozen when unused
 - **Image Optimizer** - Compress scene backgrounds and tokens for faster loading
 - **Settings cleaner** - Clean old settings left over by modules you don't use anymore
+- **Chat Drawer** - Slide-out chat panel optimized for mobile
 
-### FOR MEMBERS OF AMETHYST CLUB
+### FOR PATREON FOLLOWERS (AMETHYST CLUB)
 
 Amethyst Club features require a [Patreon](https://www.patreon.com/carolingiandev) membership on any tier
 
 - **Full Mobile Character Sheets** - Drawer UI with all tabs - Inventory, Features, Spells (DnD5e, Daggerheart, PF2e)
 - **Combat Section** - Quick access to actions by type and item descriptions (DnD5e)
 - **Inventory and Spellbook** - Touch-friendly lists with activation and preparation buttons
-- **Chat Drawer** - Slide-out chat panel optimized for mobile
 - **Spell Template Placer** - Touch-friendly spell template positioning - combine with free module **Flash Token Bar** for auto-targeting
 
 The module has been tested and works well with **Flash Token Bar** and **Carolingian UI**
@@ -50,7 +50,7 @@ The module has been tested and works well with **Flash Token Bar** and **Carolin
 ### Limitations
 
 - JB2a videos have dark background on iPad / iPhone - you can disable them in settings
-- Sheet editing is for combat-related things - not character management
+- Sheet editing is for combat-related things - character management is limitted
 - Not extensively tested on old or low-end phones - I recommend 4Gb minimum for manipulating maps, but if using sheet only mode it is less demanding and can be used on any phone
 
 ## Requirements
@@ -64,7 +64,7 @@ The module has been tested and works well with **Flash Token Bar** and **Carolin
 ### From Foundry
 1. Open Foundry VTT Setup
 2. Go to Add-on Modules
-3. Search for "Swipe VTT"
+3. Search for "Swipe Mobile"
 4. Click Install
 
 ### Manual Installation
