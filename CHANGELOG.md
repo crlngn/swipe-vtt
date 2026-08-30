@@ -4,6 +4,27 @@ All notable changes to Swipe VTT will be documented in this file.
 
 ## [Unreleased]
 
+## [2.6.0] - 2026-08-30
+
+### Added
+
+- **Mobile chat is now free.** The chat drawer — one message at a time with swipe navigation — is available to everyone, not just patrons.
+- **Type from mobile.** A keyboard button (bottom-left, shown while the chat drawer is open) reveals Foundry's native chat input full-width and focuses it. Sending a message drops the input and switches back to the messages. The editor toolbar (Format/Insert Image/…) is hidden on phones where it doesn't fit.
+- **Add items to the PF2e inventory.** An **Add Item** button opens a searchable, tappable equipment picker (PF2e's own index): multi-select with an accent outline, a per-row quantity (default 1), long-press to open an item's sheet, and **Done** adds the whole selection.
+- **Use PF2e consumables.** Consumable rows (scrolls, potions, elixirs, wands, …) get a **Use** button that runs the system's `consume()` — scrolls cast their spell, others post their activation card, and charges/quantity are tracked automatically.
+
+### Changed
+
+- A valid world token now covers a second GM without requiring their own Patreon login — the reconnect prompt only appears when premium is genuinely unavailable.
+
+### Fixed
+
+- The Dice Tray module no longer pops the mobile keyboard (and shifts the layout) on every die tap inside the chat drawer.
+- Taps now pass through the floating button stack to the chat input and Roll button behind it while chat is open.
+- The `#flash-rolls-icon` is hidden on mobile, where its menu can't open.
+- Softened crlngn-ui's harsh white whisper-message border on mobile.
+- Inventory currency chips use the tertiary background.
+
 ## [2.5.0] - 2026-08-25
 
 ### Added
