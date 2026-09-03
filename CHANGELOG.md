@@ -4,6 +4,24 @@ All notable changes to Swipe VTT will be documented in this file.
 
 ## [Unreleased]
 
+## [2.7.0] - 2026-09-01
+
+### Added
+
+- **PF2e standalone support.** The proxy-hosted standalone client now works for PF2e worlds: the GM ships derived stats (saves, skills, perception, AC/HP/dying, hero points, senses, identity, coins) as serialized data, and the client rebuilds the PF2e actor shape with working **check rolls** (saves/skills/perception/initiative via the GM, single-d20 roll dialog with no advantage row). The **condition grid** applies/removes conditions from the phone, **currency is editable**, and **Standalone appears in the performance-mode dialog** for PF2e. Strikes and spellcasting are the remaining phase.
+- **The standalone client is an installable PWA** — web-app manifest with the Carolingian icon, offline-capable app shell, and "Add to Home Screen" launches that restore the last session automatically.
+- **The dnd5e damage tray works on standalone** — styled like in Foundry, with collapse, per-target multipliers, and Apply relayed to the GM.
+- **Standalone infrastructure**: the GM snapshots system CONFIG (labels, status effects, PF2e conditions) into the boot payload; owned-item CRUD is relayed live in both directions; module templates/assets are mirrored for the production proxy (fixing template/icon 404s for every system); system stylesheets are bundled; inline enricher codes (@UUID/@Check/@Damage/@Localize, inline rolls) render as readable chips; the GM bridge starts as soon as Patreon is connected mid-session; presence clears immediately when the page closes.
+- **Mobile-styled confirmation dialog** replaces Foundry's native confirm for item and intercession deletes.
+- **Divine intercessions can be removed** from the PF2e Effects tab (with confirmation), and effects/intercessions render on standalone.
+
+### Fixed
+
+- **"Disable Dice So Nice" reliably disables it.** DSN initializes asynchronously, so the toggle silently missed on slow devices and never re-applied after a reload; it now defers to DSN's ready hook. **"Disable Heavy FX Modules" actually works** — it had no consumer at all; it now drives FXMaster's per-client switch.
+- The PF2e Effects tab no longer duplicates every active condition below the grid — the detail list only shows conditions with a value or duration.
+- Container contents' quantity inputs, intercession row alignment, and inline content-link chips styled correctly.
+- Local development: the proxy's auth bypass now covers world-token minting, so standalone can be provisioned and tested locally.
+
 ## [2.6.0] - 2026-08-30
 
 ### Added
