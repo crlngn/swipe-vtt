@@ -3,6 +3,23 @@
 All notable changes to Swipe VTT will be documented in this file.
 
 
+## [2.7.2] - 2026-09-05
+
+### Added
+
+- **Dice So Nice: No Shadows** toggle in the Performance tab (Disable Heavy Modules), on by default. Dice So Nice 6's shadow pass resets the GPU on some phones (PowerVR-based Pixel 10), which kills every WebGL context on the page and blanks the map until reload. Traced with adb + DevTools on a Pixel 10 Pro XL: default settings crashed 8 of 10 first rolls, shadows off survived 16 of 16.
+
+### Changed
+
+- **Dice So Nice toggles now use DSN's own per-client settings.** "Disable Dice So Nice" writes DSN visibility "none" and "No Shadows" writes DSN shadow quality "none", so Swipe's Performance tab and DSN's dialog always agree. The values DSN had before are remembered and restored on uncheck; changes made in DSN's dialog are mirrored back into Swipe on the next load.
+- **Balanced mode renders at native resolution on phones.** The board no longer renders at full device pixel ratio (1080x2018 on a 443x828 viewport) on phones; tablets keep high-DPI until Aggressive.
+- iOS Safari Dice So Nice optimization now turns shadows off entirely instead of "low".
+
+### Fixed
+
+- The WebGL context-loss overlay never attached on first load: canvasReady fires before mobile mode is enabled, so the guard only ever attached after a scene change.
+- The GPU detection probe leaked a WebGL context for the life of the page; it is now released after reading the renderer string.
+
 ## [2.7.1] - 2026-09-05
 
 ### Added
