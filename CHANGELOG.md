@@ -2,7 +2,27 @@
 
 All notable changes to Swipe VTT will be documented in this file.
 
-## [Unreleased]
+
+## [2.7.1] - 2026-09-05
+
+### Added
+
+- **Per-actor "Disable Swipe mobile sheet".** The actor directory context menu can exclude an actor from the mobile drawer. Flagged actors open the system's own sheet on mobile at every entry point (directory, token double-tap, sheet interception) and are left out of the avatar carousel.
+- **Touch dragging for Foundry `Draggable` handles.** HUDs and frameless apps from other modules (e.g. Calendaria) that drag with Foundry's `Draggable` can now be dragged with a finger; the browser no longer steals the gesture for panning.
+- **Item Piles compatibility**: merchant, inventory, settings and text-editor windows are pinned to their desktop sizes and scaled to fit, instead of squishing.
+
+### Changed
+
+- **Windows scale at their natural size.** Module windows with no min-width used to be clamped to the phone width by Foundry/TyphonJS and render squished. Swipe now restores the size the application declares (both dimensions) before scaling it down, unless a stylesheet min-width already forces scaling.
+- **dnd5e dialogs** (roll configuration, activity usage, rests) take the same 500px min-width as other windows and scale down, keeping their desktop proportions at the larger mobile font scale.
+- **Settings windows on small devices**: taller inputs (2.75rem) for tapping; form groups wrap with wide labels so buttons, selects, range pickers and inputs sit on their own row; Game Settings gets a taller category sidebar, roomier groups and spacing; "Open Game Settings" moved to the top of Swipe's General tab. Overrides hold when Carolingian UI is active.
+- **Calendaria HUD** is hidden in mobile mode.
+
+### Fixed
+
+- Foundry ApplicationV2 windows were never found by the window scaler (string ids), so their position was never synced; scaled dnd5e dialogs also landed half off-screen because Foundry rewrote the position after Swipe set it.
+- Windows that fit the viewport re-checked their size every 150ms forever.
+- `module-compat.css` was never bundled; its Token Action HUD rules are now live.
 
 ## [2.7.0] - 2026-09-01
 
