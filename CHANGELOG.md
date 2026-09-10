@@ -3,6 +3,27 @@
 All notable changes to Swipe VTT will be documented in this file.
 
 
+## [2.8.0] - 2026-09-10
+
+### Added
+
+- **Call of Cthulhu 7e (CoC7) mobile sheets** for character, NPC and creature actors.
+  - Header with the occupation and HP; MP / SAN / Luck and the daily SAN loss counter sit at the top of the Details tab. Tapping any of them adjusts the value through the system's own setters, so damage, major wounds and insanity side effects apply exactly as on the desktop sheet.
+  - Free **Details** tab: characteristics in the house-rule order with hard/extreme values, Luck / SAN / Idea / Know checks, MOV / Build / DB / Armor, condition toggles and the dying check. Tap follows the "show check dialogs" setting, long-press does the opposite.
+  - Premium **Skills** (grouped like the native sheet, search, sort, uncommon toggle, development flags and development-phase actions, compendium skill picker that marks skills already on the sheet), **Combat** (attack, per-range damage, ammo and reload, fighting/firearm skill shortcuts, armor, pulp luck spends), **Inventory** (Credit Rating money, items with quantity dialog), **Arcana** (books, spells with cast, talents, phobias/manias), **Effects** and **Bio**.
+  - While the sheet is unlocked, weapons, armor, items, books and spells can be added from their category headers (opening the new item's sheet) and deleted from their rows with a confirmation, matching the desktop controls.
+  - Bio tab backstory sections are editable on the phone while the sheet is unlocked: each section is a Foundry ProseMirror editor (tap the pencil, save to write back), titles can be renamed, and sections added, reordered or removed, as on the desktop sheet.
+  - Honours the system's sheet settings: player name on the sheet (Identity and Bio), "Player can modify status" (condition toggles read-only for players when off), hide half/extreme values, one-block backstory, and legacy versus automated spell costs in Arcana.
+  - Swipe-styled roll dialog (roll type, difficulty, bonus/penalty dice) replaces the system's bonus-selection window. Combined and opposed roll cards are supported; their difficulty and dice are set on the card per participant, as in the system; "Show check dialogs" now applies to CoC7 as well as PF2e.
+  - Active conditions and effects show as a tag row at the top of Details, like the other systems; the Details tab is grouped under "Primary Attributes", "Secondary / Derived" and "Identity", with read-only derived stats drawn without card backgrounds. Condition toggles live on the Effects tab in the shared two-column grid, and condition status effects are kept out of the Active/Inactive lists.
+- **Native CoC7 windows on mobile** (item sheets, SAN and other system dialogs) take Swipe's fonts, colours, spacing and radii through overrides on `.application.coc7`, without rebuilding them. Item windows grow with their content (capped to the viewport), tabs flow instead of scrolling inside, and the tab bar no longer collapses on taller tabs; property toggles keep their selected state visible even with crlngn-ui active. The sheet lock hides the mobile skill picker, matching the desktop add-item controls. Label/input column grids (weapon details) reflow to two per row so labels no longer slide under their inputs.
+- `BaseSection._bindPress()` helper for tap + long-press on any element.
+
+### Fixed
+
+- The mobile drawer now refreshes when an effect that lives on one of the actor's items changes (toggling an armor or weapon effect updated the data but not the sheet).
+- Premium watch mode now also rebuilds on Daggerheart section changes.
+
 ## [2.7.2] - 2026-09-05
 
 ### Added
