@@ -3,6 +3,12 @@
 All notable changes to Swipe VTT will be documented in this file.
 
 
+## [2.8.1] - 2026-09-10
+
+### Fixed
+
+- **Swipe's floating controls no longer overlap Foundry's UI on tablets.** The rules that hide the quick-controls toggle, settings cog and chat drawer once Foundry's own UI is visible (1024x768 and up) had a selector that could never match, so viewports such as 1280x768 showed both at once. Foundry's players list, which was hidden to make room for the quick controls, is back at those sizes. The show/hide threshold is now documented in one place (`BREAKPOINTS.FOUNDRY_UI_MIN_HEIGHT`) and every media query mirrors it.
+
 ## [2.8.0] - 2026-09-10
 
 ### Added
