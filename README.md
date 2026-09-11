@@ -11,7 +11,6 @@ If you log in to Patreon as a GM, all of your players will get access to special
 **Consider supporting the module to keep the lights on.**
 
 https://github.com/user-attachments/assets/7a10110e-a374-44f7-a0b4-386a25cb08b0
-
 https://github.com/user-attachments/assets/0b579978-72c2-4019-af2c-bec1bbb04a22
 
 
@@ -22,6 +21,7 @@ https://github.com/user-attachments/assets/0b579978-72c2-4019-af2c-bec1bbb04a22
 - **Map Touch Controls** - Pan and pinch-zoom navigation on the canvas
 - **Token Interaction** - Tap to select, tap again to target, double-tap to open sheets, drag to move, long-press for HUD
 - **Quick controls** - quick access to most necessary controls: ruler, remove targets, template drawing, volume and logout
+- **Chat Drawer** - Slide-out chat panel optimized for mobile
 - **Touch/Mobile Detection** - Automatically enables on mobile devices
 - **Portrait/Landscape Support** - Adapts UI to device orientation - on tablets, sheets load as a side drawer
 - **Safari Compatibility** - Fixes for iOS Safari quirks (But JB2A videos don't have transparency on iOS, can't work around)
@@ -39,25 +39,32 @@ https://github.com/user-attachments/assets/0b579978-72c2-4019-af2c-bec1bbb04a22
 
 Amethyst Club features require a [Patreon](https://www.patreon.com/carolingiandev) membership on any tier
 
-- **Full Mobile Character Sheets** - Drawer UI with all tabs - Inventory, Features, Spells (DnD5e, Daggerheart, PF2e)
+- **Full Mobile Character Sheets** - Drawer UI with all tabs for supported systems - Inventory, Features, Spells (DnD5e, Daggerheart, PF2e, CoC7e)
 - **Combat Section** - Quick access to actions by type and item descriptions (DnD5e)
 - **Inventory and Spellbook** - Touch-friendly lists with activation and preparation buttons
-- **Chat Drawer** - Slide-out chat panel optimized for mobile
 - **Spell Template Placer** - Touch-friendly spell template positioning - combine with free module **Flash Token Bar** for auto-targeting
 
 The module has been tested and works well with **Flash Token Bar** and **Carolingian UI**
 
+### Supported Systems
+- DnD5e 5.x
+- Daggerheart
+- PF2e
+- Call of Cthulhu 7e
+
 ### Limitations
 
 - JB2a videos have dark background on iPad / iPhone - you can disable them in settings
-- Sheet editing is for combat-related things - not character management
+- Sheet editing is for combat-related things - not character management. Though some basic charcter management is enabled
+- Some modules will not work on phones or not be optimized for them - this is on the module makers, not me.
 - Not extensively tested on old or low-end phones - I recommend 4Gb minimum for manipulating maps, but if using sheet only mode it is less demanding and can be used on any phone
 
 ## Requirements
 
-- Foundry VTT v13+
+- Foundry VTT v13/v14
 - [socketlib](https://foundryvtt.com/packages/socketlib) module
-- For sheets: D&D 5e System 4.0+ / PF2e / Daggerheart
+- For sheets: D&D 5e System 4.0+ / PF2e / Daggerheart / CoS7e
+(you can still use other systems' regular sheets, they simply won't be redesigned for mobile)
 
 ## Installation
 
