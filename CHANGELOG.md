@@ -3,6 +3,45 @@
 All notable changes to Swipe VTT will be documented in this file.
 
 
+## [2.9.1] - 2026-09-13
+
+### Added
+
+- **Template trash understands v14 regions.** The trash in the Templates picker deletes selected regions first (tap a region to select it; the picker now opens on the Regions layer on v14), asking for confirmation, so a region the GM placed for an effect or teleport is only removed on purpose. With nothing selected it removes measured templates only: MeasuredTemplate documents on v13 and, on v14, the regions core flags as templates. Permission failures show a warning instead of failing silently.
+- **Rotate token from the Token HUD** ([swipe-vtt#16](https://github.com/crlngn/swipe-vtt/issues/16)). Long-press a token you can move to open its HUD; a rotate button above the trash turns it one facing clockwise per tap: 45° on square and gridless scenes (the eight directions), 60° on hex grids. Hidden for tokens with "Lock Artwork Rotation" on. The phone equivalent of Shift+scroll on desktop.
+
+### Fixed
+
+- **Templates picker draws on v14.** Foundry v14 removed the measure controls, so picking a shape did nothing. The picker now switches the Regions layer into template mode with the matching tool (circle, cone, rectangle, line), keeps the tool from being reset by the mode change, returns to token controls once the shape lands, and restores the user's template-mode setting.
+- Long-pressing a token to open its HUD no longer also fires core's long-press canvas ping.
+- The target and Select Tokens quick controls unfreeze a frozen canvas before acting, like the other canvas tools.
+
+## [2.9.0] - 2026-09-12
+
+### Added
+
+- **One-finger map panning.** New client setting "One finger drag on map canvas" (Controls section, default "Move the map"): a single finger dragged across empty map pans the viewport, and a second finger can join mid-drag to pinch-zoom without a jump. Dragging a token you own still moves it, and tap, double-tap and long-press are unchanged. Two-finger pan and zoom keep working. Choose "Select tokens" to keep Foundry's drag-to-select rectangle instead.
+- **Add to Scene from the Actors directory.** Long-press an actor row in the Actors popout (or right-click on desktop) for a new "Add to Scene" entry that drops the actor's token at the center of the current view, snapped to the grid. Players without the Create Token permission ask the GM client over the socket, which checks they own the actor before placing it. Sidebar popouts (Journal, Actors, Compendium, Playlists) are capped at 70% of the screen height and scroll inside. Context menus on phones open centered under their row at 70% of the screen width with larger text, so they never fall off-screen, and a tap anywhere outside the menu closes it (taps on the canvas never became the click core listens for).
+- **Delete token from the Token HUD.** Long-press a token you own to open its HUD; a trash button at the bottom of the left column deletes it after a confirmation. Players go through the GM client, which checks they own the actor.
+- **Select Tokens quick control.** While one-finger panning is on, a new Quick Controls toggle switches single-finger drags to the selection rectangle until tapped again. Also works on the MiniCanvas.
+
+### Changed
+
+- Settings form on phones: labels take 80% of the row so only checkboxes and radios share it; selects, text fields and ranges wrap below at the same 2:1 share core gives inputs.
+- **Target button targets the selection.** The crosshairs quick control now targets every selected token when nothing is targeted (or every visible hostile token when nothing is selected either), and clears all targets otherwise; its icon and highlight follow the current targets. Also on the MiniCanvas.
+- **Quick Controls show what is on.** Pause, Measure Distance, Templates, Volume, Camera Controls and Scenes highlight while their tool, mode or panel is active. Journal, Compendium and the new Actors button (below Scenes) toggle: tapping again closes the open popout, and the highlight clears however the popout is closed. Journal, Actors, Compendium and Playlists popouts share the rounded frame. The Templates button uses the Regions icon. The floating Scenes panel opens centered and uses the same `--background` as the Journal and Compendium popouts.
+- `--mobile-accent-40` is now defined; the active state of Quick Controls buttons (Select Tokens, Scenes) and other accent-40 fills were rendering transparent, so a toggled button looked off while the lingering touch hover tint made an untoggled one look on.
+
+- **D&D 5e 6.0 support.** Every 6.0-specific path is gated on the running system version (`utils/SystemCompat.mjs`), so 5.x worlds behave exactly as before.
+  - Details tab: sense labels read the new `{ label }` config objects (they rendered as `[object Object]` on 6.0), walking speed reads `movement.speeds.walk`, and the damage/condition trait and armor/weapon proficiency headers use the `DND5E.TRAIT.*` keys 6.0 introduced. Effects tab headers use `DND5E.EFFECT.*`.
+  - "Open chat on use/cast" recognises 6.0's typed `usage` / `item` messages (and roll cards carrying `system.activity`/`system.item`) instead of the `flags.dnd5e.use` flags 6.0 no longer writes. The GM relays that verdict to standalone players.
+  - Standalone chat: item cards with 6.0's `.card-header` / `.card-description` face collapse and expand like the old `.description` cards; the relayed damage tray understands the 6.0 layout (global multiplier row, targets inside `<recorded-targets>`, `.apply-button`) and passes the message as `origin` when applying damage. Actor snapshots drop the shimmed flat `movement.walk` keys alongside the flat sense keys.
+  - Chat styling covers the 6.0 card face, `.card-flavor`, and the renamed `.target-source-toggle` button.
+
+### Fixed
+
+- **Long chat cards can be scrolled to the end in the mobile chat drawer.** An older rule for the floating chat popout set `min-height: max-content` on chat messages with a more specific selector than the drawer's active-message rule; since min-height wins over max-height, a long card (an expanded PF2e feat or spell card, or a long pasted message on any system) grew past the drawer and was clipped instead of becoming scrollable. Affected every system, not only PF2e.
+
 ## [2.8.1] - 2026-09-10
 
 ### Fixed
