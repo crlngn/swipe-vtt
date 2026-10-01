@@ -3,6 +3,12 @@
 All notable changes to Swipe VTT will be documented in this file.
 
 
+## [Unreleased]
+
+### Changed
+
+- The image optimizer prompt and the Auto-Optimize setting now say that optimized copies are saved as new files on the server, in the chosen folder, and that originals are never changed.
+
 ## [2.9.2] - 2026-09-16
 
 ### Fixed
