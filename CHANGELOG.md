@@ -3,6 +3,12 @@
 All notable changes to Swipe VTT will be documented in this file.
 
 
+## [2.9.2] - 2026-09-16
+
+### Fixed
+
+- **Moved map images are served optimised on phones again.** When an original was moved or renamed after optimisation, the optimiser matched the existing optimised file by name and reported the image as covered, but the registry (and the mobile texture swap, which is keyed by exact path) only knew the old path, so phones loaded the full-size original. The GM's scene analysis now registers the existing optimised file for the new path instead of re-encoding.
+
 ## [2.9.1] - 2026-09-13
 
 ### Added

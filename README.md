@@ -5,7 +5,7 @@
 
 A mobile-friendly interface for [Foundry VTT](https://foundryvtt.com/) with touch controls, optimized character sheets, and performance enhancements for phones and tablets. Use it as a second screen companion for easy access to character sheet, roll saves, skills, attacks, update of HP, etc. - but if your PC fails you can play from the phone!
 
-**Note for iPhone users:** While the module works on iOS, iPhones and iPads limit memory used per tab. So if your world is heavy, iOS will reload the page constantly. There's not much I can do about it, but I've added a memory diagnostics for you to check your world. Try to keep everything in compendium whenever possible and optimize scene images. You want the calculation of world memory to not be more than ~400MB. If nothing works, on DnD5e I've added Standalone mode which works independently of Foundry but doesn't have many Foundry features.
+**Note for iPhone users:** While the module works on iOS, iPhones and iPads limit memory used per tab. So if your world is heavy, iOS will reload the page constantly. There's not much I can do about it, but I've added a memory diagnostics for you to check your world. Try to keep everything in compendium whenever possible and optimize scene images. You want the calculation of world memory to not be more than ~400MB. If nothing works, on DnD5e and Pathfinder I've added Standalone mode which works independently of Foundry but doesn't have all Foundry features and requires GM to be online in Foundry for player to roll.
 
 If you log in to Patreon as a GM, all of your players will get access to special features. The GM account needs to have previously logged in and connected to Patreon for the player to access special features.
 **Consider supporting the module to keep the lights on.**
@@ -17,7 +17,7 @@ https://github.com/user-attachments/assets/0b579978-72c2-4019-af2c-bec1bbb04a22
 
 ## Features
 
-### AVAILABLE FOR EVERYONE
+### AVAILABLE FOR EVERYONE WITHOUT PATREON
 
 - **Map Touch Controls** - Pan and pinch-zoom navigation on the canvas
 - **Token Interaction** - Tap to select, tap again to target, double-tap to open sheets, drag to move, long-press for HUD
@@ -32,13 +32,13 @@ https://github.com/user-attachments/assets/0b579978-72c2-4019-af2c-bec1bbb04a22
 - **Application window resize** - resizes or rescales handouts, journals and other application windows to fit in view
 - **Character carousel** - see all characters you have ownership to in the swipable carousel
 - **Basic sheet** - tab for basic rolls as well as hp management is free (DnD5e / Daggerheart / PF2e)
-- **Canvas Freeze** - Enable on low-end devices to help conserve battery and improve performance - canvas remains frozen when unused
+- **Canvas Freeze** - Enable on mid to low-end devices to help conserve battery and improve performance - canvas remains frozen when unused
 - **Image Optimizer** - Compress scene backgrounds and tokens for faster loading
 - **Settings cleaner** - Clean old settings left over by modules you don't use anymore
 
 ### FOR MEMBERS OF AMETHYST CLUB
 
-Amethyst Club features require a [Patreon](https://www.patreon.com/carolingiandev) membership on any tier
+Amethyst Club is the community of supporters. Certain features require a [Patreon](https://www.patreon.com/carolingiandev) membership, but you can choose the amount you want to give.
 
 - **Full Mobile Character Sheets** - Drawer UI with all tabs for supported systems - Inventory, Features, Spells (DnD5e, Daggerheart, PF2e, CoC7e)
 - **Combat Section** - Quick access to actions by type and item descriptions (DnD5e)
@@ -56,9 +56,9 @@ The module has been tested and works well with **Flash Token Bar** and **Carolin
 ### Limitations
 
 - JB2a videos have dark background on iPad / iPhone - you can disable them in settings
-- Sheet editing is for combat-related things - not character management. Though some basic charcter management is enabled
+- Sheet editing is for combat-related things - not character management. Though some basic character management is enabled
 - Some modules will not work on phones or not be optimized for them - this is on the module makers, not me.
-- Not extensively tested on old or low-end phones - I recommend 4Gb minimum for manipulating maps, but if using sheet only mode it is less demanding and can be used on any phone
+- Not extensively tested on old or low-end phones - I recommend 4Gb memory minimum for manipulating maps, but if using sheet only or standalone mode, it is less demanding.
 
 ## Requirements
 
@@ -98,7 +98,7 @@ https://github.com/crlngn/swipe-vtt/releases/latest/download/module.json
 
 ## Patreon Activation
 
-1. Join us on [Patreon](https://www.patreon.com/carolingiandev)
+1. Join the community on [Patreon](https://www.patreon.com/carolingiandev)
 2. In Foundry, open game settings >> Swipe VTT 
 3. Connect to Patreon
   - if you are on a **desktop browser** as GM, you can connect to Patreon via Connect to Patreon button
@@ -109,7 +109,7 @@ https://github.com/crlngn/swipe-vtt/releases/latest/download/module.json
 5. Special features unlock automatically for GM and players
 
 ## Support
-- [Discord](https://discord.gg/kjmJzgUJ)
+- [Discord](https://discord.gg/cAuTaTYda3)
 - [Patreon Community](https://www.patreon.com/carolingiandev)
 - [Report Issues](https://github.com/crlngn/swipe-vtt/issues)
 
