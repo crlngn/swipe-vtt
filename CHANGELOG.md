@@ -5,9 +5,37 @@ All notable changes to Swipe VTT will be documented in this file.
 
 ## [Unreleased]
 
+## [2.11.0] - 2026-10-03
+
+### Added
+
+- **World of Darkness 5e mobile sheets.** Vampires, ghouls, mortals, hunters, werewolves, story characters (SPCs) and groups (coterie, cell, pack) get Swipe's mobile drawer. Rolls, rouse checks, frenzy, form shifts and other actions go through the system's own code.
+  - **Details:** Health and Willpower as diamond pips with superficial / aggravated damage, Hunger and Rage pips, a hunter's Desperation and Danger and a werewolf's Harano and Hauglosk as pip cells, attributes, and quick actions. SPCs show their general difficulty and dice pools (tap to roll, long-press to edit).
+  - **Blood tab (vampires):** Blood Potency and Humanity, Remorse and Feeding rolls, the potency table, the clan bane and the clan / predator type / resonance items.
+  - **Wolf tab (werewolves):** Frenzy, the forms of the Garou (shift, read, chat, edit) and the tribe's patron spirit with its favor and ban.
+  - **Skills, Powers, Features, Equipment, Effects and Biography tabs:** skill specialties (long-press a skill to edit its rating and specialties), disciplines / edges / gifts with rouse and cost buttons, renown pips, backgrounds / merits / flaws / boons, equipment with quantities and uses, conditions and status effects, experience history (add, spend, edit, delete) and biography blocks owners can edit, with an eye to share them in the limited view.
+  - **Group sheet:** type selector, the type's values as pips, members with health bars (tap to open, add / remove), features, equipment and biography. A WoD5e group can be the party group.
+  - Items open in a Swipe edit dialog (name, the numbers their type uses, description) with a link to the system's full sheet, which is restyled for phones.
+  - World of Darkness worlds use a blood-red accent by default, unless Carolingian UI sets its own colors.
+- **Pin actors to the avatar carousel.** "Add to avatar carousel" on the actor context menu (desktop or phone) adds an actor to the carousel even without a token on the scene. A GM's or owner's pin reaches every player with Limited permission or better; a player who only observes keeps a personal pin. Pinned actors open with each user's own permission level.
+- **D&D 5e Background block is now item rows.** Creature type, species and background show with their artwork like the native sheet. Owners can tap a row for its description, long-press for the item menu, change size from the species row, remove a species or background (with dnd5e's advancement prompt when needed), pick a replacement from the compendium browser via "Add Species" / "Add Background", open the creature type config, edit characteristics (alignment, gender, faith, appearance) and personality traits inline, and edit the biography with Foundry's rich-text editor (v13 and v14).
+- **Locked sheet sections now offer a way forward.** When the GM hasn't connected Patreon, the locked section explains that optimized sheets are for Amethyst Circle members (any amount) and offers "Ask GM to connect", which opens the Patreon dialog on the GM's desktop client (or on their phone when that is the only GM client), and "Use regular sheets", which turns mobile sheets off for that device and reloads.
+
 ### Changed
 
+- **Sheets are read-only for players who don't own the actor**, in every system. Players with Limited or Observer permission can open a sheet and roll, but controls that change data (rests, hit dice, item / spell use, equip, currency, quantities, conditions and effects, notes, resources) are hidden or disabled for them.
+- Carousels refresh on every player's device when the GM changes the party group or a shared pin.
+- Actors with the Swipe sheet disabled stay in the carousel and open the system's own sheet; "Disable / Enable Swipe sheet" only appears for actor types Swipe has a sheet for.
+- Confirm dialogs, the sheet drawer (90% of the screen, fade from 75%), the actor context menu on phones, biography lists and item-row spacing are tidier.
+- "Amethyst Club" is now "Amethyst Circle" throughout the module.
+- The Patreon dialog no longer lists image optimization as a member feature, since the optimizer is part of the free module.
+
 - The image optimizer prompt and the Auto-Optimize setting now say that optimized copies are saved as new files on the server, in the chosen folder, and that originals are never changed.
+
+### Fixed
+
+- A disabled D&D 5e effect can be turned back on from the Effects tab.
+- Mobile form fields wrapped in `.form-fields` get their own row.
 
 ## [2.9.2] - 2026-09-16
 
