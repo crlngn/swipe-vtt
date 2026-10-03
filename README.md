@@ -52,6 +52,7 @@ The module has been tested and works well with **Flash Token Bar** and **Carolin
 - Daggerheart
 - PF2e
 - Call of Cthulhu 7e
+- Vampire / World of Darkness 5e
 
 ### Limitations
 
