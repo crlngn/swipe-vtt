@@ -88,13 +88,14 @@ https://github.com/crlngn/swipe-vtt/releases/latest/download/module.json
 - The GM must have connected in the last 7 days for players to use the Amethyst Club features offline
 
 ### Touch Gestures
+One or two finger pan to move map depends on setting
 | Gesture | Action |
 |---------|--------|
 | Single tap | Select token <-> Target token |
 | Double tap | Open character sheet |
 | Drag | Move token |
 | Long press | Show token HUD |
-| Two-finger pan | Move canvas |
+| One or two finger pan | Move canvas |
 | Pinch | Zoom in/out |
 
 ## Patreon Activation
