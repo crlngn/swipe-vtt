@@ -3,7 +3,38 @@
 All notable changes to Swipe VTT will be documented in this file.
 
 
-## [Unreleased]
+## [2.12.0] - 2026-10-06
+
+### Added
+
+- **Collapsible sections in Swipe's settings.** A −/+ button beside each fieldset title collapses it; collapsed sections stay collapsed on that device. Without Carolingian UI, the rows inside a section sit closer together (2px apart, as with Carolingian UI).
+- **GM locks on players' settings**, like Carolingian UI's. In Swipe's settings the GM gets a lock icon beside each per-client setting: click to cycle open → soft (the GM's value is applied once, players can change it) → locked (players always get the GM's value and can't change it); right-click or Alt+click locks it for players while the GM keeps their own value. Players see a lock on locked settings. The per-player overrides in the Users tab sit on top of these locks, and a GM can now force a setting off for a player (tick Force, leave On unticked).
+- **Foundry V13 support.** Swipe 2.x installs on Foundry V13 again (`compatibility.minimum` 13), so V13 worlds get the same features as V14 instead of staying on 1.23. On V13 the Swipe QR Code opens the phone-join page from 1.x: the phone logs in as the player's own user, with the password prompt or Skip Standalone Authentication as before, and no "(Swipe)" duplicate user is created. The duplicate-user buttons in the Users tab and the Auto-Create Mobile Profile setting are hidden on V13, and Skip Standalone Authentication shows on V13 only. Players set to Standalone still get the proxy-hosted client on both versions.
+- **Combat tracker button in the quick controls.** Opens Foundry's combat tracker as a popout (tap again to close), so the combat can be run from a phone or tablet where Foundry's sidebar is hidden. Follows Carolingian UI's hidden sidebar tabs setting, like the Journal and Compendium buttons.
+- **Interface tab in Swipe's settings**, after General. It holds the Show & Hide Controls group (the new Enable Swipe controls setting, then Hide Quick Controls, Hide Avatar Carousel and Hide Macro Hotbar Button, previously under Controls) and Camera Views.
+- **Enable Swipe controls (mobile) setting.** On the new Interface tab; chooses between Swipe's interface (quick controls, button stack, chat drawer) and Foundry's (sidebar, scene controls, players list, hotbar). Its checkbox always reflects the current screen: checked below 1280x600 and unchecked above, unless it was changed at this size; a choice made in the settings stays until the screen crosses that size again, including across reloads. Touch gestures, mobile sheets and the avatar carousel work with either interface. With Foundry's interface, Swipe's settings cog is in the token scene controls.
+
+### Changed
+
+- **Swipe's settings are split into World Settings (GM) and Client Settings**, like Carolingian UI. On desktop, players only see the settings that do something there (Enable Mobile Mode on Desktop and the Heavy FX, Automated Animations and Dice So Nice toggles); the GM sees every setting, and the hints of the ones that only work on phones and tablets say so. Players no longer get the Users tab, and desktop players don't get the empty Interface tab. "Controls" is now "Map Controls" and "Expanded Sheet (Tablet)" is now "Use Full Page Sheets (Tablets)".
+- **Foundry's interface by default from 1280x600 (was 1024x768).** 13" iPads in landscape, large Android tablets and desktops start with Foundry's interface; the iPad mini, iPad, iPad Air and iPad Pro 11" start with Swipe's in both orientations, where Foundry's interface was cramped. Use the new Combat button, or uncheck Enable Swipe controls to get Foundry's sidebar anyway. The `swipe-vtt-phone` body class now follows the setting.
+- **The avatar carousel replaces Foundry's players list** when Foundry's interface shows, instead of overlapping it in the bottom-left corner. The players list comes back when the carousel is hidden or has no avatars.
+- **Hide Quick Controls no longer hides the settings button.** It stays as the way into Swipe's settings while Foundry's sidebar is hidden.
+
+### Fixed
+
+- **Swipe settings no longer turn off the canvas on desktop.** Saving Swipe's settings on a desktop wrote Disable Canvas into Foundry's own No Canvas setting, and picking a performance mode wrote Foundry's canvas, FPS and quality settings, so Sheet-Only left the desktop without a canvas after the next reload. These core settings are now only changed on a phone or tablet.
+- **Saving Swipe's settings kept resetting settings that weren't on screen.** On desktop, Mobile Sheets, Close Sheet on Roll, Auto-Show Chat, Chat Auto-Hide, Keep Awake, Speaker-Only Camera and others were written back to their defaults on every save, and so were settings the GM had forced for that player. Only the settings shown in the form are saved now.
+- **GM-forced Canvas Freeze and Keep Awake** in the Users tab are applied. The canvas freezer and the wake lock read the player's own setting and ignored the override; Amethyst Circle mobile sheets did the same for a forced Enable Mobile Sheets.
+- **Reset Defaults** uses each setting's real default; Close Sheet on Roll, Speaker-Only Camera and Freeze Delay were reset to the wrong values.
+- **Screen-awake status line** only shows while Swipe's wake lock is running; on desktop it always read "not active right now".
+- **Swipe QR Code on Foundry servers with a route prefix.** The link dropped the prefix (e.g. `https://host/foundry/`), so the phone opened a page that didn't exist.
+- **Daggerheart currency.** The inventory read and wrote `system.currency`, which the system doesn't have, so coins, handfuls, bags and chests always showed 0 and edits were lost. It now uses `system.gold`.
+- **Daggerheart armor marks on system 2.x.** The Mark / Clear dialog showed the wrong slot count and saved the marks where the system doesn't read them. It now uses the armor resource and the armor item's own field on both 1.x and 2.x.
+- **WoD5e werewolf frenzy** from the Wolf section now posts the Crinos form to chat. The frenzy forced the war form, then the system failed to read which form to post because Swipe's call didn't say Crinos, as the native sheet's button does.
+- **WoD5e: removing a group member on system 5.3.15 and earlier** (the last releases for Foundry V13) threw an error. It now uses those releases' own remove action.
+- **Avatar carousel centered on the side sheet on wide tablets and desktops.** In landscape the carousel was centered on a 35vw-wide column while the sheet is 28vw wide, so the open sheet's close button sat off to the right of the sheet; both now use the same width.
+- **Swipe settings cog in the scene controls.** The cog was never added to the token controls on Foundry v13+, which pass the controls as an object rather than an array.
 
 ## [2.11.0] - 2026-10-03
 
