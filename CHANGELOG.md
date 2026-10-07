@@ -3,6 +3,23 @@
 All notable changes to Swipe VTT will be documented in this file.
 
 
+## [2.12.1] - 2026-10-07
+
+### Added
+
+- **PF2e: prepare formulas for daily crafting.** Advanced Alchemy and other prepared crafting entries showed their formulas but couldn't change them, so alchemists couldn't choose their daily items on a phone. The empty-slot row (or a Prepare Formula row for entries without slots) opens a picker of the formulas that entry can craft, each with a stepper: + prepares a batch, − removes one, and 0 unprepares it. A counter shows the slots used.
+- **PF2e: prepared formula rows** show the image, name and quantity stepper; tapping one expands its traits, level and price, description and icon buttons for craft, expend or restore (signature on alchemical entries), view and unprepare. The stepper is locked on expended formulas, since daily crafting skips them, and entries warn when there aren't enough slots or reagents.
+- **PF2e: temporary items** made by daily or quick crafting show PF2e's stopwatch after their name in the inventory, as they expire at the next daily preparation.
+- **PF2e: editable faction reputation** in the Pathfinder Society section of the Other tab.
+
+### Fixed
+
+- **PF2e: remaining crafting slots** were counted per formula instead of per batch, so an alchemist with 8 slots and four formulas prepared twice showed 4 slots left.
+- **PF2e: PFS school** showed a raw `PF2E.PFS.School.none` key instead of its name (e.g. Field-Commissioned Agent).
+- **Taps in Carolingian UI's floating combat tracker clicked twice.** PF2e initiative rolled twice, and the encounter menu (three dots) closed as soon as it opened.
+- **Context menus open clear of the button that opened them** on phones, instead of under the finger.
+- **Taller Done button** in the PF2e formula and spell pickers.
+
 ## [2.12.0] - 2026-10-06
 
 ### Added
