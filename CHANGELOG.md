@@ -3,6 +3,16 @@
 All notable changes to Swipe VTT will be documented in this file.
 
 
+## [2.12.2] - 2026-10-11
+
+### Fixed
+
+- **Quick controls render on the standalone client before the user has synced.** On a slow connection the GM pause button threw while the player's user was still loading, which could leave quick controls missing.
+
+### Changed
+
+- Removed the unused legacy mobile drawer and character sheet code.
+
 ## [2.12.1] - 2026-10-07
 
 ### Added
