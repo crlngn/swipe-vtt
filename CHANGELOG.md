@@ -3,6 +3,14 @@
 All notable changes to Swipe VTT will be documented in this file.
 
 
+## [2.12.3] - 2026-10-12
+
+### Fixed
+
+- **Daggerheart: fear tracker on phones.** All fear pips fit on one row, the panel keeps its background instead of only showing it on hover, and Carolingian UI's docked combat carousel sits below the tracker instead of overlapping it.
+- **Actor directory context menu closed as soon as it opened** on some Android phones, when the browser's own long-press fired before Swipe's.
+- **Docked combat carousel's close button** sat off the right edge of the screen on phones; cards now stop before it.
+
 ## [2.12.2] - 2026-10-11
 
 ### Fixed
