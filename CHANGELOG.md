@@ -3,6 +3,26 @@
 All notable changes to Swipe VTT will be documented in this file.
 
 
+## [2.12.4] - 2026-10-23
+
+### Added
+
+- **Standalone: midi-qol and Carolingian UI compact cards in chat.** The GM sends midi's stylesheet and the compact cards switches with the world data, so dnd5e 6 cards show midi's attack, hit and damage results and the compact layout: accent icon rows, collapsible tags, framed totals, the d20 face and inline roll breakdowns, with Swipe's dice icons.
+- **Standalone: advantage and disadvantage after the roll.** The compact cards buttons beside a d20 total work on your own rolls, sent to the GM to apply.
+- **Standalone: mouse support on the map.** Drawing templates and measuring distance work with a mouse drag, and picking a template shape shows a "drag on the map to draw" hint with a cancel button.
+
+### Fixed
+
+- **Standalone: "You have limited access to this character"** on owned characters. The notice now only shows for real limited access, names the actor and says to ask the GM for Observer or Owner permission.
+- **Standalone: midi damage trays** collapse, select a multiplier and apply the tray's own damage to midi's hit targets.
+- **Standalone: templates on Foundry v14** are created as template regions owned by the player, appear for everyone as soon as they change, and can be deleted.
+- **Standalone: one-finger drag pans the map** again unless Select Tokens is on.
+- **Standalone: the dnd5e Other tab** failed to load.
+- **Standalone: missing icons** for the templates and untarget controls.
+- **Standalone: new text showed its translation key** when the GM ran an older Swipe; it falls back to English.
+- **Template picker** is centered on the screen.
+- **Verified on Foundry 14.369.**
+
 ## [2.12.3] - 2026-10-12
 
 ### Fixed
