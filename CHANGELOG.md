@@ -6,6 +6,14 @@ All notable changes to Swipe VTT will be documented in this file.
 ## [Unreleased]
 
 
+## [2.14.1] - 2026-11-16
+
+### Fixed
+
+- Opening a token of an actor that another token on the scene also uses (two Bandits from one actor) showed the first token's sheet until a different sheet was opened in between.
+- The loot drawer's Take and Buy now start the quantity at 1 for a stack.
+
+
 ## [2.14.0] - 2026-11-15
 
 ### Added
