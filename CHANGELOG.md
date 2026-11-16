@@ -3,6 +3,78 @@
 All notable changes to Swipe VTT will be documented in this file.
 
 
+## [Unreleased]
+
+
+## [2.14.0] - 2026-11-15
+
+### Added
+
+- **Loot drawer for Pathfinder 2e.** Dead NPCs that PF2e lets players loot, loot actors and merchants open in the mobile sheet with a single Loot tab:
+  - **Take** or **Take All** on corpses and loot, asking how many for a stack;
+  - **Buy** at the item's price on merchants, paid from the character's coins;
+  - the merchant's currency, editable by the GM.
+
+  Items move through PF2e's own transfer, the same as dragging between sheets on desktop, so a GM must be connected for players to take items they don't own.
+- **Sidecar tab in Swipe's settings (GM only, once Swipe Sidecar has served the world).** Choose what phones and tablets connected through Sidecar load:
+  - only the modules each device needs (on by default): Sidecar skips 3D dice, animations, GM tools and modules that only draw into parts of the screen Swipe hides, and keeps every module that changes rolls, effects or data;
+  - a strict mode that also skips interface and unclassified modules;
+  - trimmed world data for a GM on a phone or tablet: NPCs, world items and journals load in full when opened, other scenes when viewed;
+  - per module: automatic, always load, or never load on phones and tablets, with Sidecar's verdict and reason beside each.
+
+  Swipe alone cannot keep a module from loading; these choices apply only to devices served by Sidecar. A device told about new choices after it loaded asks for a reload.
+- **Swipe Sidecar support.** Swipe detects Sidecar, and one-finger pan on the empty map works on devices served by it.
+- **Memory guards for phones and tablets.** Repeated loads of the same compendium entry share one request, and the fog and vision masks render at a capped resolution (map, tokens, lighting and interface stay sharp), so iPhones close the page far less often. Players the GM sets to Off keep Foundry's own canvas.
+
+### Changed
+
+- **"Raven" is now "Sidecar" throughout Swipe.**
+- **Double-tapping a token with Limited permission opens its limited view** in the mobile sheet instead of doing nothing.
+- **Verified with Foundry 14.370.**
+
+### Fixed
+
+- **Duplicate copies of Swipe's world settings are removed on the GM's next load.** Concurrent first writes had stored the 1.2 MB standalone actor cache three times in one world, and every client loaded all three.
+- **Tokens and the grid are sharp on phones in Balanced mode.** Balanced rendered the canvas at 1×; it now renders at up to 2× (3× iPhones are capped at 2× to save memory). Phones already on Balanced switch over on their next load; Aggressive still renders at 1×.
+- **Players can open Item Piles piles and merchants by double-tapping them** without Observer permission, as they can on desktop.
+- **The game no longer stays black on iOS Safari** when the browser holds back Foundry's connection at startup.
+- **Smaller actor cache in dnd5e worlds.** Hit dice no longer copy whole actors into Swipe's cache.
+- **Opening Swipe in a new browser no longer turns Dice So Nice back on** for a user who had turned it off.
+- **Smoother avatar carousel on iPhone;** a tapped avatar glides to the centre as the drawer opens.
+
+
+## [2.13.0] - 2026-11-08
+
+### Added
+
+- **Swipe Window Styles (Interface settings, on by default, lockable by the GM).** In mobile mode, Foundry's dialogs and settings windows take the Swipe dialog look (every framed form: Game Settings, configuration windows, module settings). Character, item and journal sheets keep their own look. The look is:
+  - a centred title over an accent line;
+  - filled fields;
+  - hints that show two lines and open with a tap;
+  - text-only footer buttons, with the default action in the accent colour.
+
+  On a narrow window, Game Settings shows a category list collapsed to the active category (tap to open, pick to close) and setting cards; submenus show as cards with a link and a caret; on a wide one, the category list sits beside label and control rows. The styles come from the shared `@crlngn/window-styles` kit, which Carolingian UI can load too; with both modules active, turn the setting off in both to get Foundry's look back.
+
+### Changed
+
+- **The Swipe QR Code no longer opens on every desktop load.** Open it from a user's right-click menu in the players list or the Swipe QR Code button in User Configuration. The "Don't show this on load" checkbox is gone with it.
+- **Game Settings keeps Foundry's own layout on tablets.** The stacked categories and one-control-per-row layout now apply only on phone-width screens (under 768px).
+- **Form controls stay beside their labels on tablets.** Swipe's rule that drops buttons, selects and inputs below the label and stretches them across the row now applies only on phone-width screens, in every window.
+- **The avatar carousel replaces Foundry's players list on small phones in landscape too,** now that the carousel shows there, so the two no longer overlap.
+- **Mobile devices follow Foundry's own theme instead of being forced into dark mode.** Swipe's own panels stay dark in a light theme.
+- **iPhones are no longer pushed into Sheet-Only or Standalone.** They start with the canvas like other phones, and the chooser's recommendation follows device performance; the player or GM picks the mode.
+
+### Fixed
+
+- **Text fields keep the keyboard open on Android browsers that resize the page for it.** On Firefox for Android, Samsung Internet and some Android WebViews, focusing a field in portrait shrank the page under the phone-landscape breakpoint, showed "Please Rotate Your Device" and closed the keyboard. The rotation warning is gone: sheets, the carousel and the side bars stay usable on short, wide screens.
+- **Chat cards show one at a time in the mobile chat drawer on systems that force their own chat card layout** (Digimon Digital Adventures). The drawer's card rules now load in Foundry's `layouts` cascade layer, so a system's `!important` styles no longer override them.
+- **Attune button hidden from non-owners** for items with optional attunement.
+- **Portrait and landscape layout follows every window resize,** including unfolding a foldable to its near-square screen, which keeps the portrait layout.
+- **Character sheets no longer get cut off at the top on iPhones.** The sheet drawer fits the visible screen and stays below the notch.
+- **The floating Scenes panel follows the theme's text colour,** and its title matches the directory popouts.
+- **Bottom buttons sit above the closed avatar carousel on tablets.**
+
+
 ## [2.12.4] - 2026-10-23
 
 ### Added
