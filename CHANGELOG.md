@@ -6,6 +6,21 @@ All notable changes to Swipe VTT will be documented in this file.
 ## [Unreleased]
 
 
+## [2.14.2] - 2026-11-20
+
+### Added
+
+- **Savage Worlds (SWADE) mobile sheets** for characters and NPCs (SWADE 5.2 on v13, 6.0 on v14):
+  - header with wounds, penalty and a wounds stepper;
+  - free Details tab with bennies, fatigue, conviction, power points, attribute dice, Pace, Parry, Toughness and Size;
+  - premium Skills (with the actor's actions), Edges & Hindrances, Powers, Gear, Effects and Bio (with the advance track) tabs;
+  - rolls and item actions go through the system, so ammo, power point costs and hooks still apply.
+
+### Fixed
+
+- D&D 5e: players saw the real description of unidentified items in the mobile sheet. They now see the unidentified description, as on the regular item sheet.
+
+
 ## [2.14.1] - 2026-11-16
 
 ### Fixed
